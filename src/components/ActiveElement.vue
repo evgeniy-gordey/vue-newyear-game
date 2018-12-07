@@ -32,7 +32,8 @@
             return {
                 isHover: false,
                 isClicked: false,
-                wasClicked: false
+                wasClicked: false,
+                el: {}
             }
         },
         computed: {
@@ -40,28 +41,34 @@
                 return () => import(`../svg/${this.data.path}`)
             }
         },
-        created() {
-            setTimeout(() => {
-                const el = document.querySelector(`.${this.data.name}`)
-                const mouseEnterHandler = () => {
-                    this.isHover = true
-                }
-                const mouseLeaveHandler = () => {
-                    this.isHover = false
-                }
-                const clickHandler = () => {
-                    this.isClicked = true
-                    setTimeout(() => {
-                        this.isClicked = false
-                        this.wasClicked = true
-                        el.removeEventListener('mouseenter', mouseEnterHandler)
-                        el.removeEventListener('mouseenter', mouseLeaveHandler)
-                    }, 3000);
-                }
-                el.addEventListener('mouseenter', mouseEnterHandler)
-                el.addEventListener('mouseleave', mouseLeaveHandler)
-                el.addEventListener('click', clickHandler)
-            }, 2000)
+        methods: {
+            mouseEnterHandler () {
+                this.isHover = true
+            },
+            mouseLeaveHandler () {
+                this.isHover = false
+            },
+            clickHandler () {
+                this.isClicked = true
+                this.isHover = false
+                this.el.removeEventListener('mouseenter', this.mouseEnterHandler)
+                this.el.removeEventListener('mouseleave', this.mouseLeaveHandler)
+                setTimeout(() => {
+                    this.el.removeEventListener('click', this.clickHandler)
+                    this.isClicked = false
+                    this.wasClicked = true
+                }, 3000);
+            }
+        },
+        mounted() {
+            this.componentLoader().then(() => {
+                this.$nextTick(() => {
+                    this.el = this.$el.querySelector(`.${this.data.name}`)
+                    this.el.addEventListener('mouseenter', this.mouseEnterHandler)
+                    this.el.addEventListener('mouseleave', this.mouseLeaveHandler)
+                    this.el.addEventListener('click', this.clickHandler)
+                })
+            })
         }
     }
 </script>
