@@ -1,0 +1,9 @@
+<svg data-name="chimney" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 254 209.78">
+    <g class="chimney" data-name="chimney-group">
+        <polyline style="fill:#957055" class="cls-1" points="166 109 62 109 18 109 18 173.07 88 173.07 88 153 163 153 163 173.07 166 173.07 166 109"/>
+        <path style="fill:#5d453b" class="cls-2" d="M252,284.11H183v64.07h16.09c10.88,0,13.31,1.39,18.46,6.34L252,384.89V284.11" transform="translate(-17 -175.11)"/>
+        <polyline style="fill:#5d453b" class="cls-2" points="254 0 244.61 0 181.22 0 179 0 179 109 62 109 166 109 235 109 254 109 254 3 254 0"/>
+        <polyline style="fill:#805c42" class="cls-3" points="179 0 82.64 0 20.27 0 0 0 0 21.9 0 109 18 109 62 109 179 109 179 0"/>
+        <polyline style="fill:#a88063" class="cls-4" points="163 153 88 153 88 173.07 163 173.07 163 153"/>
+    </g>
+</svg>
