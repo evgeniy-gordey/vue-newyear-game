@@ -5,17 +5,16 @@
         <component 
             :is="componentLoader" 
             class="active-element__svg"
-            :style="{ top: data.top, left: data.left, width: data.width, zIndex: data.zIndex + 2 }"/>
+            :style="{ top: data.top, left: data.left, width: data.width, zIndex: isClicked ? 1001 : data.zIndex + 2 }" />
         <div 
             class="active-element__tooltip"
-            :style="{ top: data.top, left: data.left, width: data.tooltip.width, marginTop: data.tooltip.marginTop, marginLeft: data.tooltip.marginLeft, zIndex: data.zIndex }">
-            <span>{{ data.title }}</span>
+            :style="{ top: data.top, left: data.left, width: data.tooltip.width, marginTop: data.tooltip.marginTop, marginLeft: data.tooltip.marginLeft, zIndex: 1100 }">
+            <component :is="tooltipLoader" />
         </div>
         <div
             class="active-element__modal"
-            :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: data.zIndex + 1 }">
-            <span class="active-element__title">{{ data.title }}</span>
-            <span class="active-element__motto">{{ data.motto }}</span>
+            :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: 1000 }">
+            <component :is="modalLoader" />
         </div>
     </div>
 </template>
@@ -26,6 +25,9 @@
         props: {
             data: {
                 type: Object
+            },
+            increaseCounter: {
+                type: Function
             }
         },
         data: () => {
@@ -39,6 +41,12 @@
         computed: {
             componentLoader () { 
                 return () => import(`../svg/${this.data.path}`)
+            },
+            tooltipLoader () {
+                return () => import(`../svg/${this.data.tooltipPath}`)
+            },
+            modalLoader () {
+                return () => import(`../svg/${this.data.modalPath}`)
             }
         },
         methods: {
@@ -51,10 +59,10 @@
             clickHandler () {
                 this.isClicked = true
                 this.isHover = false
+                if (this.data.click) this.increaseCounter();
                 this.el.removeEventListener('mouseenter', this.mouseEnterHandler)
                 this.el.removeEventListener('mouseleave', this.mouseLeaveHandler)
                 setTimeout(() => {
-                    this.el.removeEventListener('click', this.clickHandler)
                     this.isClicked = false
                     this.wasClicked = true
                 }, 3000);
@@ -66,7 +74,7 @@
                     this.el = this.$el.querySelector(`.${this.data.name}`)
                     this.el.addEventListener('mouseenter', this.mouseEnterHandler)
                     this.el.addEventListener('mouseleave', this.mouseLeaveHandler)
-                    this.el.addEventListener('click', this.clickHandler)
+                    this.el.addEventListener('click', this.clickHandler, {once: true})
                 })
             })
         }
@@ -84,14 +92,19 @@
 
     .active-element_hover .active-element__tooltip {
         opacity: 1; 
+        z-index: 500;
+        display: block;
+        transform: translate3d(0, 0, 0)
     }
 
     .active-element_clicked .active-element__modal {
         opacity: 1;
+        display: block;
+        transform: translate3d(0, 0, 0)
     }
 
-    .active-element_found .active-element__svg {
-        filter: drop-shadow(0 0 10px #fff); 
+    .active-element_found .active-element__svg .outline {
+        fill: #fff;
     }
 
     .active-element_found {
@@ -99,44 +112,22 @@
     }
 
     .active-element__tooltip {
-        display: flex;
-        text-align: center;
         opacity: 0; 
+        z-index: -1;
+        display: none;
         position: absolute;
-        justify-content: center;
-        background: #fff;
-        padding: 4px 0;
-        border-radius: 5px;
-        color: #D86600;
-        box-shadow: 2px 0 0 1px #000;
         transition: opacity 0.5s ease;
     }
 
     .active-element__modal {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         opacity: 0;
+        display: none;
         position: absolute;
-        background: #fff;
-        padding: 4px 0;
-        border-radius: 5px;
-        box-shadow: 2px 0 0 1px #000;
         transition: opacity 0.5s ease;
     }
 
-    .active-element__title {
-        text-align: center;
-        color: #D86600;
-        padding-bottom: 10px;
-    }
-
-    .active-element__motto {
-        text-align: center;
-        color: #7A923C;
-        font-size: 10px;
-        padding: 4px 0;
-        font-weight: bold;
+    .resize {
+        width: 100%;
     }
 
 </style>
