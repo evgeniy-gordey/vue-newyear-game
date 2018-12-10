@@ -11,10 +11,15 @@
             :style="{ top: data.top, left: data.left, width: data.tooltip.width, marginTop: data.tooltip.marginTop, marginLeft: data.tooltip.marginLeft, zIndex: 1100 }">
             <component :is="tooltipLoader" />
         </div>
-        <div
-            class="active-element__modal"
-            :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: 1000 }">
-            <component :is="modalLoader" />
+        <div class="active-element__modal-wrapper">
+            <div 
+                class="active-element__modal-overlay"
+                @click="closeModal()" />
+            <div 
+                class="active-element__modal"
+                :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: 1000 }">
+                <component :is="modalLoader" />
+            </div>
         </div>
     </div>
 </template>
@@ -56,16 +61,14 @@
             mouseLeaveHandler () {
                 this.isHover = false
             },
-            clickHandler () {
+            openModal () {
                 this.isClicked = true
                 this.isHover = false
-                if (this.data.click) this.increaseCounter();
-                this.el.removeEventListener('mouseenter', this.mouseEnterHandler)
-                this.el.removeEventListener('mouseleave', this.mouseLeaveHandler)
-                setTimeout(() => {
-                    this.isClicked = false
-                    this.wasClicked = true
-                }, 3000);
+                if (this.data.click && !this.wasClicked) this.increaseCounter()
+                this.wasClicked = true
+            },
+            closeModal () {
+                this.isClicked = false;
             }
         },
         mounted() {
@@ -74,7 +77,7 @@
                     this.el = this.$el.querySelector(`.${this.data.name}`)
                     this.el.addEventListener('mouseenter', this.mouseEnterHandler)
                     this.el.addEventListener('mouseleave', this.mouseLeaveHandler)
-                    this.el.addEventListener('click', this.clickHandler, {once: true})
+                    this.el.addEventListener('click', this.openModal)
                 })
             })
         }
@@ -103,12 +106,16 @@
         transform: translate3d(0, 0, 0)
     }
 
+    .active-element_clicked .active-element__modal-overlay {
+        z-index: 20000;
+    }
+
     .active-element_found .active-element__svg .outline {
         fill: #fff;
     }
 
     .active-element_found {
-        pointer-events: none;
+        /* pointer-events: none; */
     }
 
     .active-element__tooltip {
@@ -117,6 +124,15 @@
         display: none;
         position: absolute;
         transition: opacity 0.5s ease;
+    }
+
+    .active-element__modal-overlay {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
     }
 
     .active-element__modal {
