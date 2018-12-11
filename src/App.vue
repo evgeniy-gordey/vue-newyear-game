@@ -4,52 +4,34 @@
             <div class="counter">
                 <span>{{ counter }} / {{ allElements }}</span>
             </div>
-            <div 
-                class="start-screen" 
-                v-if="!isStarted">
-                <Start class="start"/>
-                <div 
-                    class="start-button" 
-                    @click="triggerStart()">
-                    <StartButton />
-                </div>
-                <div class="start-under" />
-            </div>
-            <Background class="bg" />
-            <House class="house" />
-            <Roof class="roof"/>
-            <active-element 
-                v-for="element in activeElements" 
-                :key="element.name"
-                :increaseCounter="increaseCounter"
-                :data="element" />
+            <StartScreen 
+                v-if="!isStarted"
+                :triggerStart="triggerStart" />
+            <StaticElements />
+            <ActiveElements 
+                :elementsList="elementsList" 
+                :increaseCounter="increaseCounter"/>
         </div>
     </div>
 </template>
 
 <script>
-    import Start from './svg/start.svg'
-    import StartButton from './svg/start-button.svg'
-    import Background from './svg/background.svg'
-    import House from './svg/house.svg'
-    import Roof from './svg/roof.svg'
-    import ActiveElement from './components/ActiveElement.vue'
+    import ActiveElements from './components/ActiveElements.vue'
+    import StaticElements from './components/StaticElements.vue'
+    import StartScreen from './components/StartScreen.vue'
 
     export default {
         name: 'app',
         components: {
-            Start,
-            StartButton,
-            Background,
-            House,
-            Roof,
-            ActiveElement
+            ActiveElements,
+            StaticElements,
+            StartScreen,
         },
         data: () => {
             return {
                 isStarted: false,
                 counter: 0,
-                activeElements: [
+                elementsList: [
                     {
                         name: 'snowman',
                         click: false,
@@ -143,7 +125,7 @@
         },
         computed: {
             allElements() {
-                return this.activeElements.filter(item => item.click).length
+                return this.elementsList.filter(item => item.click).length
             }
         },
         methods: {
@@ -173,51 +155,6 @@
         display: grid;
         position: relative;
         width: 100%;
-    }
-
-    .start-under {
-        z-index: 9900;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .start {
-        z-index: 10000;
-        position: absolute;
-        width: 50%;
-        top: 25%;
-        left: 25%;
-    }
-
-    .start-button {
-        position: absolute;
-        z-index: 10010;
-        width: 20%;
-        top: 70%;
-        left: 40%;
-        cursor: pointer;
-    }
-
-    .bg {
-     z-index: 100;
-    }
-
-    .house {
-        position: absolute;
-        top: 18.9%;
-        left: 8.3%;
-        width: 75%;
-        z-index: 200;
-    }
-
-    .roof {
-        position: absolute;
-        pointer-events: none;
-        width: 6.8%;
-        top: 28.9%;
-        left: 26.5%;
-        z-index: 300;
     }
 
     .counter {

@@ -26,7 +26,7 @@
 
 <script>
     export default {
-        name: 'activeElement',
+        name: 'ActiveElementsItem',
         props: {
             data: {
                 type: Object
