@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <div class="wrapper">
-            <div class="counter">
-                <span>{{ counter }} / {{ allElements }}</span>
-            </div>
+            <Counter 
+                :currentCount="currentCount"
+                :maxCount="maxCount" />
             <StartScreen 
                 v-if="!isStarted"
                 :triggerStart="triggerStart" />
@@ -19,6 +19,7 @@
     import ActiveElements from './components/ActiveElements.vue'
     import StaticElements from './components/StaticElements.vue'
     import StartScreen from './components/StartScreen.vue'
+    import Counter from './components/Counter.vue'
 
     export default {
         name: 'app',
@@ -26,11 +27,12 @@
             ActiveElements,
             StaticElements,
             StartScreen,
+            Counter
         },
         data: () => {
             return {
                 isStarted: false,
-                counter: 0,
+                currentCount: 0,
                 elementsList: [
                     {
                         name: 'snowman',
@@ -124,13 +126,13 @@
             }
         },
         computed: {
-            allElements() {
+            maxCount() {
                 return this.elementsList.filter(item => item.click).length
             }
         },
         methods: {
             increaseCounter() {
-                this.counter++
+                this.currentCount++
             },
             triggerStart() {
                 this.isStarted = true
@@ -155,14 +157,5 @@
         display: grid;
         position: relative;
         width: 100%;
-    }
-
-    .counter {
-        position: absolute;
-        color: #fff;
-        font-size: 20px;
-        top: 5%;
-        left: 5%;
-        z-index: 200;
     }
 </style>
