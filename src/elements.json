@@ -1,0 +1,66 @@
+[
+    {
+        "name": "snowman",
+        "isCounted": false,
+        "top": "71%",
+        "left": "15.3%",
+        "zIndex": 250,
+        "modal": {
+            "width": "12.2%",
+            "marginLeft": "0.8%",
+            "marginTop": "-7.5%"
+        },
+        "tooltip": {
+            "marginLeft": "-1.2%",
+            "marginTop": "-3%"
+        }
+    },
+    {
+        "name": "chimney",
+        "isCounted": false,
+        "top": "18.7%",
+        "left": "32.3%",
+        "zIndex": 250,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-7.3%",
+            "marginLeft": "-3%"
+        },
+        "tooltip": {
+            "marginTop": "-5%",
+            "marginLeft": "-3%"
+        }
+    },
+    {
+        "name": "attic-boxes",
+        "isCounted": false,
+        "top": "26.4%",
+        "left": "27.89%",
+        "zIndex": 260,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-4.5%",
+            "marginLeft": "-1.2%"
+        },
+        "tooltip": {
+            "marginTop": "-4%",
+            "marginLeft": "-1.2%"
+        }
+    },
+    {
+        "name": "ship",
+        "isCounted": true,
+        "top": "51.85%",
+        "left": "6.1%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "0",
+            "marginLeft": "0"
+        }
+    }
+]

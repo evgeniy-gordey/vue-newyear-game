@@ -5,7 +5,7 @@
         <component 
             :is="componentLoader" 
             class="active-element__svg"
-            :style="{ top: data.top, left: data.left, width: data.width, zIndex: isClicked ? 1001 : data.zIndex + 2 }" />
+            :style="{ top: data.top, left: data.left, zIndex: isClicked ? 1001 : data.zIndex + 2 }" />
         <div 
             class="active-element__tooltip"
             :style="{ top: data.top, left: data.left, width: data.tooltip.width, marginTop: data.tooltip.marginTop, marginLeft: data.tooltip.marginLeft, zIndex: 1100 }">
@@ -45,13 +45,13 @@
         },
         computed: {
             componentLoader () { 
-                return () => import(`../svg/${this.data.path}`)
+                return () => import(`../svg/active-elements/${this.data.name}.svg`)
             },
             tooltipLoader () {
-                return () => import(`../svg/${this.data.tooltipPath}`)
+                return () => import(`../svg/tooltips/${this.data.name}.svg`)
             },
             modalLoader () {
-                return () => import(`../svg/${this.data.modalPath}`)
+                return () => import(`../svg/modals/${this.data.name}.svg`)
             }
         },
         methods: {
@@ -64,7 +64,7 @@
             openModal () {
                 this.isClicked = true
                 this.isHover = false
-                if (this.data.click && !this.wasClicked) this.increaseCounter()
+                if (this.data.isCounted && !this.wasClicked) this.increaseCounter()
                 this.wasClicked = true
             },
             closeModal () {
@@ -114,15 +114,12 @@
         fill: #fff;
     }
 
-    .active-element_found {
-        /* pointer-events: none; */
-    }
-
     .active-element__tooltip {
         opacity: 0; 
         z-index: -1;
         display: none;
         position: absolute;
+        width: 14%;
         transition: opacity 0.5s ease;
     }
 
