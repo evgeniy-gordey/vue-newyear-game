@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196.67 298.67" style="width: 4.01%">
+    <g class="locker">
+        <polyline points="25.83 283.85 16.83 283.85 16.83 295.26 16.83 295.85 17.83 295.85 25.83 295.85 25.83 283.85" style="fill:#a7541b"/>
+        <polyline points="181.83 283.85 172.83 283.85 172.83 295.85 180.83 295.85 181.83 295.85 181.83 294.96 181.83 283.85" style="fill:#a7541b"/>
+        <path d="M180,225H13.55v23H180V225M11,224h0v24h2.55V225H11v-1" transform="translate(3.83 2.85)" style="fill:#d27431"/>
+        <path d="M13.55,224H11v1h2.55v-1M180,224H13.55v1H180v-1" transform="translate(3.83 2.85)" style="fill:#d9925f"/>
+        <path d="M180,252H13.55v17.6H180V252M11,251h0v24H180v-5.4H13.55V252H11v-1" transform="translate(3.83 2.85)" style="fill:#d27431"/>
+        <polyline points="107.25 240.41 107.25 237.52 90.25 237.52 90.25 240.41 107.25 240.41" style="fill:#eadd6d"/>
+        <polyline points="107.25 265.57 107.25 262.68 90.25 262.68 90.25 265.57 107.25 265.57" style="fill:#eadd6d"/>
+        <path d="M12,197.36l-3,1.06V201h3v-3.64M12,189H9v9.42l3-1.06V189" transform="translate(3.83 2.85)" style="fill:#eadd6d"/>
+        <polyline points="185.83 191.85 183.83 191.85 182.83 191.85 182.83 203.85 183.83 203.85 185.83 203.85 185.83 191.85" style="fill:#eadd6d"/>
+        <path d="M13.55,221H11v3h2.55v-3M181,221H13.55v3H181v-3" transform="translate(3.83 2.85)" style="fill:#71330e"/>
+        <path d="M13.55,248H11v3h2.55v-3M181,248H13.55v3H181v-3" transform="translate(3.83 2.85)" style="fill:#71330e"/>
+        <path d="M13.55,251H11v1h2.55v-1M180,251H13.55v1H180v-1" transform="translate(3.83 2.85)" style="fill:#d9925f"/>
+        <path d="M9,198.42l-4,1.42V281H185V269.6h-5V275H11V224h0V201H9v-2.58M13.55,12H5V199.84l4-1.42V189h2V52H9V40h2V19h2.55V12M185,12H13.55v7H180V40h2V52h-2V189h2v12h-2v20h1v3h-1v24h1v3h-1v18.6h5V12" transform="translate(3.83 2.85)" style="fill:#bc6526"/>
+        <path d="M13.55,10H4v2h9.55V10M187,10H13.55v2H187V10" transform="translate(3.83 2.85)" style="fill:#a45319"/>
+        <path d="M13.55,196.81l-1.55.55V221h1.55V196.81M13.55,20H12V197.36l1.55-.55V20M85,129V112h5v17H85M94,19h0v1H13.55V196.81l10.34-3.65-10.34,3.65V221H94V19" transform="translate(3.83 2.85)" style="fill:#d27431"/>
+        <path d="M101,129V112h5v17h-5M180,20H97V221h83V201h-1V189h1V52h-1V40h1V20" transform="translate(3.83 2.85)" style="fill:#d27431"/>
+        <path d="M12,201H11v20h1V201M12,52H11V189h1V52M11,19h0V40h1V20H11V19" transform="translate(3.83 2.85)" style="fill:#d9925f"/>
+        <polyline points="93.83 114.85 88.83 114.85 88.83 131.85 93.83 131.85 93.83 114.85" style="fill:#eadd6d"/>
+        <polyline points="109.83 114.85 104.83 114.85 104.83 131.85 109.83 131.85 109.83 114.85" style="fill:#eadd6d"/>
+        <polyline points="185.83 42.85 183.83 42.85 182.83 42.85 182.83 54.85 183.83 54.85 185.83 54.85 185.83 42.85" style="fill:#eadd6d"/>
+        <path d="M13.55,2H.76l3,8h9.77V2M190,2H13.55v8H187l3-8" transform="translate(3.83 2.85)" style="fill:#cc7536"/>
+        <polyline points="99.83 21.85 97.83 21.85 97.83 223.85 100.83 223.85 99.83 223.85 99.83 21.85" style="fill:#71330e"/>
+        <polyline points="100.83 21.85 99.83 21.85 99.83 223.85 100.83 223.85 100.83 22.85 100.83 21.85" style="fill:#d9925f"/>
+        <path d="M13.55,0H0V2H13.55V0M191,0H13.55V2H191V0" transform="translate(3.83 2.85)" style="fill:#eab893"/>
+    </g>
+    <path class="outline" d="M179.84,295.82H165.17v-12H23.84v12H9.17v-12h-8v-269h-1L.13,11-2.2,4.82H-3.83V-2.85H192.84V4.82H191l-2.15,5.68v4.32h-2v269h-7Zm-9-5.67h3.33v-12h7V22.82H7.17V16.15h174v-7h2.12l2.39-6.33H3.1L4.74,7.15h1.1v2h1v269h8v12h3.33v-12H170.84Z" transform="translate(3.83 2.85)" style="fill: transparent"/>
+</svg>

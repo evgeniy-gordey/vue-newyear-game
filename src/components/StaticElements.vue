@@ -2,35 +2,36 @@
     <div class="static-elements">
         <Background class="bg" />
         <House class="house" />
-        <Roof class="roof" />
     </div>
 </template>
 
 <script>
     import Background from '../svg/background.svg'
-    import House from '../svg/house.svg'
-    import Roof from '../svg/roof.svg'    
+    import House from '../svg/house.svg' 
 
     export default {
         name: 'StaticElements',
         components: {
             Background,
             House,
-            Roof,
         }
     }
 </script>
 
 <style lang="css" scoped>
+    .static-elements {
+        display: grid;
+    }
+
     .bg {
-     z-index: 100;
+        z-index: 100;
     }
 
     .house {
         position: absolute;
-        top: 18.9%;
-        left: 8.3%;
-        width: 75%;
+        top: 18.58%;
+        left: 8.29%;
+        width: 75.38%;
         z-index: 200;
     }
 

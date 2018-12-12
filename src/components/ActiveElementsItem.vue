@@ -17,7 +17,7 @@
                 @click="closeModal()" />
             <div 
                 class="active-element__modal"
-                :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: 1000 }">
+                :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: data.modal.zIndex ? 1000 + data.modal.zIndex : 1000 }">
                 <component :is="modalLoader" />
             </div>
         </div>
@@ -86,11 +86,13 @@
 
 <style lang="css">
     .active-element__svg {
-        position: absolute
+        position: absolute;
+        pointer-events: none;
     }
 
     .active-element__svg g {
         cursor: pointer;
+        pointer-events: all;
     }
 
     .active-element_hover .active-element__tooltip {
@@ -137,6 +139,7 @@
         display: none;
         position: absolute;
         transition: opacity 0.5s ease;
+        pointer-events: none;
     }
 
     .resize {

@@ -1,17 +1,19 @@
 <template>
-    <div id="app">
-        <div class="wrapper">
-            <Counter 
-                :currentCount="currentCount"
-                :maxCount="maxCount" />
-            <StartScreen 
-                v-if="!isStarted"
-                :triggerStart="triggerStart" />
-            <StaticElements />
-            <ActiveElements 
-                :elementsList="elementsList" 
-                :increaseCounter="increaseCounter"/>
-        </div>
+    <div id="app" class="app">
+        <Counter 
+            :currentCount="currentCount"
+            :maxCount="maxCount" />
+        <StartScreen 
+            v-if="false"
+            :triggerStart="triggerStart" />
+        <StaticElements />
+        <ActiveElements 
+            :elementsList="elementsList" 
+            :increaseCounter="increaseCounter"/>
+        <EndScreen 
+            v-if="false" 
+            class="app__end-screen"
+            />
     </div>
 </template>
 
@@ -19,6 +21,7 @@
     import ActiveElements from './components/ActiveElements.vue'
     import StaticElements from './components/StaticElements.vue'
     import StartScreen from './components/StartScreen.vue'
+    import EndScreen from './components/EndScreen.vue'
     import Counter from './components/Counter.vue'
 
     import elements from './elements.json'
@@ -29,6 +32,7 @@
             ActiveElements,
             StaticElements,
             StartScreen,
+            EndScreen,
             Counter
         },
         data: () => {
@@ -41,6 +45,9 @@
         computed: {
             maxCount() {
                 return this.elementsList.filter(item => item.isCounted).length
+            },
+            isEnded() {
+                return this.currentCount == this.maxCount
             }
         },
         methods: {
@@ -54,21 +61,17 @@
     }
 </script>
 
-<style>
+<style lang="css">
     body {
         background: #225d78;
         margin: 0;
-    }
-
-    #app {
         width: 100%;
         height: 100vh;
-        position: relative;
     }
 
-    .wrapper {
+    .app {
+        width: 100%;
         display: grid;
         position: relative;
-        width: 100%;
     }
 </style>

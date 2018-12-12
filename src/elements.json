@@ -2,8 +2,8 @@
     {
         "name": "snowman",
         "isCounted": false,
-        "top": "71%",
-        "left": "15.3%",
+        "top": "71.69%",
+        "left": "15.35%",
         "zIndex": 250,
         "modal": {
             "width": "12.2%",
@@ -18,8 +18,8 @@
     {
         "name": "chimney",
         "isCounted": false,
-        "top": "18.7%",
-        "left": "32.3%",
+        "top": "18.4%",
+        "left": "32.4%",
         "zIndex": 250,
         "modal": {
             "width": "12.2%",
@@ -34,24 +34,41 @@
     {
         "name": "attic-boxes",
         "isCounted": false,
-        "top": "26.4%",
-        "left": "27.89%",
+        "top": "32.6%",
+        "left": "29.89%",
         "zIndex": 260,
         "modal": {
-            "width": "12.2%",
-            "marginTop": "-4.5%",
-            "marginLeft": "-1.2%"
+            "width": "9.8%",
+            "marginTop": "-6.3%",
+            "marginLeft": "-3.2%",
+            "zIndex": "1200"
         },
         "tooltip": {
-            "marginTop": "-4%",
-            "marginLeft": "-1.2%"
+            "marginTop": "-7%",
+            "marginLeft": "-3.2%"
         }
     },
     {
         "name": "ship",
         "isCounted": true,
-        "top": "51.85%",
-        "left": "6.1%",
+        "top": "52.16%",
+        "left": "5.77%",
+        "zIndex": 250,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "0",
+            "marginLeft": "0"
+        }
+    },
+    {
+        "name": "elf",
+        "isCounted": false,
+        "top": "24.1%",
+        "left": "22.8%",
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
@@ -61,6 +78,278 @@
         "tooltip": {
             "marginTop": "0",
             "marginLeft": "0"
+        }
+    },
+    {
+        "name": "santa",
+        "isCounted": false,
+        "top": "16.32%",
+        "left": "51.52%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-4%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "deer",
+        "isCounted": false,
+        "top": "14.15%",
+        "left": "74.81%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-4%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "owl",
+        "isCounted": false,
+        "top": "36.07%",
+        "left": "70.59%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-6%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "socks",
+        "isCounted": false,
+        "top": "77.5%",
+        "left": "30.13%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "fir",
+        "isCounted": false,
+        "top": "69.97%",
+        "left": "37.78%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "bear",
+        "isCounted": false,
+        "top": "73.34%",
+        "left": "86.41%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "balalaika",
+        "isCounted": false,
+        "top": "73.78%",
+        "left": "89.54%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "formwork",
+        "isCounted": true,
+        "top": "76.5%",
+        "left": "8.12%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "bed",
+        "isCounted": true,
+        "top": "49.44%",
+        "left": "23.61%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "bedroom-floor",
+        "isCounted": true,
+        "top": "61.10%",
+        "left": "28.60%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "bedroom-floor",
+        "isCounted": true,
+        "top": "61.10%",
+        "left": "28.60%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "chest",
+        "isCounted": true,
+        "top": "55.15%",
+        "left": "33.45%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "locker",
+        "isCounted": true,
+        "top": "51%",
+        "left": "43.71%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "horse",
+        "isCounted": true,
+        "top": "85.6%",
+        "left": "30.49%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "gorka",
+        "isCounted": true,
+        "top": "81.56%",
+        "left": "45.22%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "nightstand",
+        "isCounted": true,
+        "top": "50.8%",
+        "left": "59.3%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "boat",
+        "isCounted": true,
+        "top": "67.07%",
+        "left": "62.55%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
         }
     }
 ]

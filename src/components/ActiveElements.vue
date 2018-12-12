@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div class="active-elements">
         <ActiveElementsItem
             v-for="element in elementsList" 
