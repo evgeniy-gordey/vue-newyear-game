@@ -4,7 +4,7 @@
             :currentCount="currentCount"
             :maxCount="maxCount" />
         <StartScreen 
-            v-if="false"
+            v-if="!isStarted"
             :triggerStart="triggerStart" />
         <StaticElements />
         <ActiveElements 
