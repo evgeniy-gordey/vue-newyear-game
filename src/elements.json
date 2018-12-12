@@ -72,12 +72,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-7.9%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
-            "marginTop": "0",
-            "marginLeft": "0"
+            "marginTop": "-7%",
+            "marginLeft": "-3%"
         }
     },
     {
@@ -104,7 +104,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-5.5%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
@@ -120,8 +120,8 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-7.5%",
+            "marginLeft": "-2.6%"
         },
         "tooltip": {
             "marginTop": "-6%",
@@ -136,11 +136,11 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-7%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
-            "marginTop": "-8%",
+            "marginTop": "-6%",
             "marginLeft": "-2%"
         }
     },
@@ -152,12 +152,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-8%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
             "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginLeft": "-3%"
         }
     },
     {
@@ -168,11 +168,11 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-7%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
-            "marginTop": "-8%",
+            "marginTop": "-6%",
             "marginLeft": "-2%"
         }
     },
@@ -184,12 +184,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-7%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
-            "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginTop": "-6%",
+            "marginLeft": "-4%"
         }
     },
     {
@@ -200,11 +200,11 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-8%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
-            "marginTop": "-8%",
+            "marginTop": "-5%",
             "marginLeft": "-2%"
         }
     },
@@ -216,12 +216,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-10%",
+            "marginLeft": "-1.2%"
         },
         "tooltip": {
-            "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginTop": "-6%",
+            "marginLeft": "-2.2%"
         }
     },
     {
@@ -232,7 +232,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-8%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
@@ -248,8 +248,8 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-11%",
+            "marginLeft": "-3.5%"
         },
         "tooltip": {
             "marginTop": "-8%",
@@ -264,12 +264,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-10%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
             "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginLeft": "-4%"
         }
     },
     {
@@ -280,7 +280,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-9%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
@@ -296,12 +296,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-10%",
+            "marginLeft": "4%"
         },
         "tooltip": {
             "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginLeft": "3%"
         }
     },
     {
@@ -312,8 +312,8 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-9%",
+            "marginLeft": "-3.2%"
         },
         "tooltip": {
             "marginTop": "-8%",
@@ -328,7 +328,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-11%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
@@ -344,12 +344,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-9%",
+            "marginLeft": "-4%"
         },
         "tooltip": {
-            "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginTop": "-4%",
+            "marginLeft": "-5%"
         }
     },
     {
@@ -360,11 +360,11 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-7%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
-            "marginTop": "-8%",
+            "marginTop": "-4%",
             "marginLeft": "-2%"
         }
     },
@@ -376,12 +376,12 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
+            "marginTop": "-9%",
+            "marginLeft": "1.4%"
         },
         "tooltip": {
-            "marginTop": "-8%",
-            "marginLeft": "-2%"
+            "marginTop": "-6%",
+            "marginLeft": "1%"
         }
     },
     {
@@ -392,7 +392,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-8.5%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
@@ -408,7 +408,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-10.5%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
