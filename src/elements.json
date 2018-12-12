@@ -241,22 +241,6 @@
         }
     },
     {
-        "name": "bedroom-floor",
-        "isCounted": true,
-        "top": "61.10%",
-        "left": "28.60%",
-        "zIndex": 240,
-        "modal": {
-            "width": "12.2%",
-            "marginTop": "-2%",
-            "marginLeft": "-2.2%"
-        },
-        "tooltip": {
-            "marginTop": "-8%",
-            "marginLeft": "-2%"
-        }
-    },
-    {
         "name": "chest",
         "isCounted": true,
         "top": "55.15%",
@@ -341,6 +325,86 @@
         "isCounted": true,
         "top": "67.07%",
         "left": "62.55%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "molbert",
+        "isCounted": true,
+        "top": "53.14%",
+        "left": "65.8%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "window",
+        "isCounted": true,
+        "top": "44%",
+        "left": "74.6%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "car-floor",
+        "isCounted": true,
+        "top": "82.8%",
+        "left": "66.1%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "car-boxes",
+        "isCounted": true,
+        "top": "73.4%",
+        "left": "72.2%",
+        "zIndex": 240,
+        "modal": {
+            "width": "12.2%",
+            "marginTop": "-2%",
+            "marginLeft": "-2.2%"
+        },
+        "tooltip": {
+            "marginTop": "-8%",
+            "marginLeft": "-2%"
+        }
+    },
+    {
+        "name": "pricep",
+        "isCounted": true,
+        "top": "78.74%",
+        "left": "84.76%",
         "zIndex": 240,
         "modal": {
             "width": "12.2%",

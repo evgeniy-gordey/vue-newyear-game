@@ -4,14 +4,14 @@
             :currentCount="currentCount"
             :maxCount="maxCount" />
         <StartScreen 
-            v-if="false"
+            v-if="!isStarted"
             :triggerStart="triggerStart" />
         <StaticElements />
         <ActiveElements 
             :elementsList="elementsList" 
             :increaseCounter="increaseCounter"/>
         <EndScreen 
-            v-if="false" 
+            v-if="isEnded" 
             class="app__end-screen"
             />
     </div>
