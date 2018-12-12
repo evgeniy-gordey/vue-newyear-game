@@ -88,7 +88,7 @@
         "zIndex": 240,
         "modal": {
             "width": "12.2%",
-            "marginTop": "-2%",
+            "marginTop": "-7%",
             "marginLeft": "-2.2%"
         },
         "tooltip": {
