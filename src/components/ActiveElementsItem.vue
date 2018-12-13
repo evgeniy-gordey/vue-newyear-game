@@ -5,19 +5,19 @@
         <component 
             :is="componentLoader" 
             class="active-element__svg"
-            :style="{ top: data.top, left: data.left, zIndex: isClicked ? 1001 : data.zIndex + 2 }" />
+            :style="{ top: data.top, left: data.left, zIndex: isClicked ? 1110 : data.zIndex + 2 }" />
         <div 
             class="active-element__tooltip"
-            :style="{ top: data.top, left: data.left, width: data.tooltip.width, marginTop: data.tooltip.marginTop, marginLeft: data.tooltip.marginLeft, zIndex: 1100 }">
+            :style="{ top: data.top, left: data.left, width: data.tooltip.width, marginTop: data.tooltip.marginTop, marginLeft: data.tooltip.marginLeft, zIndex: 1000 }">
             <component :is="tooltipLoader" />
         </div>
         <div class="active-element__modal-wrapper">
             <div 
                 class="active-element__modal-overlay"
-                @click="closeModal()" />
+                @mouseenter="closeModal()" />
             <div 
                 class="active-element__modal"
-                :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: data.modal.zIndex ? 1000 + data.modal.zIndex : 1000 }">
+                :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: data.modal.zIndex ? 1100 + data.modal.zIndex : 1100 }">
                 <component :is="modalLoader" />
             </div>
         </div>
@@ -64,7 +64,7 @@
             openModal () {
                 this.isClicked = true
                 this.isHover = false
-                if (this.data.isCounted && !this.wasClicked) this.increaseCounter()
+                if (this.data.isCounted && !this.wasClicked) this.increaseCounter(this.data.title)
                 this.wasClicked = true
             },
             closeModal () {
@@ -108,8 +108,12 @@
         transform: translate3d(0, 0, 0)
     }
 
+    .active-element_clicked .active-element__svg g {
+        pointer-events: none;
+    }
+
     .active-element_clicked .active-element__modal-overlay {
-        z-index: 20000;
+        z-index: 990;
     }
 
     .active-element_found .active-element__svg .outline {
@@ -139,7 +143,6 @@
         display: none;
         position: absolute;
         transition: opacity 0.5s ease;
-        pointer-events: none;
     }
 
     .resize {

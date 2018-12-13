@@ -1,6 +1,12 @@
 <template>
     <div class="counter">
         <span>{{ currentCount }} / {{ maxCount }}</span>
+        <ul>
+            <li v-for="element in foundedElements" :key="element">
+                <i class="counter__check">&#10003; </i>
+                <span>{{ element }}</span>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -15,6 +21,10 @@
             maxCount: {
                 type: Number,
                 default: 0
+            },
+            foundedElements: {
+                type: Array,
+                default: () => []
             }
         }
     }
@@ -25,8 +35,19 @@
         position: absolute;
         color: #fff;
         font-size: 20px;
+        max-width: 17%;
         top: 5%;
         left: 5%;
         z-index: 200;
+    }
+
+    .counter ul {
+        padding: 0;
+        list-style: none;
+        font-size: 14px;
+    }
+    
+    .counter__check {
+        color: green;
     }
 </style>

@@ -50,6 +50,7 @@
     },
     {
         "name": "ship",
+        "title": "Изоляция танкера",
         "isCounted": true,
         "top": "52.16%",
         "left": "5.77%",
@@ -195,6 +196,7 @@
     {
         "name": "formwork",
         "isCounted": true,
+        "title": "Опалубка",
         "top": "76.5%",
         "left": "8.12%",
         "zIndex": 240,
@@ -211,6 +213,7 @@
     {
         "name": "bed",
         "isCounted": true,
+        "title": "Детская кровать",
         "top": "49.44%",
         "left": "23.61%",
         "zIndex": 240,
@@ -227,6 +230,7 @@
     {
         "name": "bedroom-floor",
         "isCounted": true,
+        "title": "Основа паркета",
         "top": "61.10%",
         "left": "28.60%",
         "zIndex": 240,
@@ -243,6 +247,7 @@
     {
         "name": "chest",
         "isCounted": true,
+        "title": "Бокс для музыкальных инструментов",
         "top": "55.15%",
         "left": "33.45%",
         "zIndex": 240,
@@ -259,6 +264,7 @@
     {
         "name": "locker",
         "isCounted": true,
+        "title": "Фасад шкафа",
         "top": "51%",
         "left": "43.71%",
         "zIndex": 240,
@@ -275,6 +281,7 @@
     {
         "name": "horse",
         "isCounted": true,
+        "title": "Детские игрушки",
         "top": "85.6%",
         "left": "30.49%",
         "zIndex": 240,
@@ -291,6 +298,7 @@
     {
         "name": "gorka",
         "isCounted": true,
+        "title": "Детская площадка",
         "top": "81.56%",
         "left": "45.22%",
         "zIndex": 240,
@@ -307,6 +315,7 @@
     {
         "name": "nightstand",
         "isCounted": true,
+        "title": "Мебельный ящик",
         "top": "50.8%",
         "left": "59.3%",
         "zIndex": 240,
@@ -323,6 +332,7 @@
     {
         "name": "boat",
         "isCounted": true,
+        "title": "Пол и сиденья для лодки",
         "top": "67.07%",
         "left": "62.55%",
         "zIndex": 240,
@@ -339,6 +349,7 @@
     {
         "name": "molbert",
         "isCounted": true,
+        "title": "Печатный штамп",
         "top": "53.14%",
         "left": "65.8%",
         "zIndex": 240,
@@ -355,6 +366,7 @@
     {
         "name": "window",
         "isCounted": true,
+        "title": "Отделка стен",
         "top": "44%",
         "left": "74.6%",
         "zIndex": 240,
@@ -371,6 +383,7 @@
     {
         "name": "car-floor",
         "isCounted": true,
+        "title": "Пол в фургоне",
         "top": "82.8%",
         "left": "66.1%",
         "zIndex": 240,
@@ -387,6 +400,7 @@
     {
         "name": "car-boxes",
         "isCounted": true,
+        "title": "Упаковка",
         "top": "73.4%",
         "left": "72.2%",
         "zIndex": 240,
@@ -403,6 +417,7 @@
     {
         "name": "pricep",
         "isCounted": true,
+        "title": "Трейлер для перевозки животных",
         "top": "78.74%",
         "left": "84.76%",
         "zIndex": 240,

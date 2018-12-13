@@ -1,6 +1,7 @@
 <template>
     <div id="app" class="app">
         <Counter 
+            :foundedElements="foundedElements"
             :currentCount="currentCount"
             :maxCount="maxCount" />
         <StartScreen 
@@ -38,21 +39,24 @@
         data: () => {
             return {
                 isStarted: false,
-                currentCount: 0,
-                elementsList: elements
+                elementsList: elements,
+                foundedElements: []
             }
         },
         computed: {
+            currentCount() {
+                return this.foundedElements.length
+            },
             maxCount() {
                 return this.elementsList.filter(item => item.isCounted).length
             },
             isEnded() {
-                return this.currentCount == this.maxCount
+                return this.currentCount === this.maxCount
             }
         },
         methods: {
-            increaseCounter() {
-                this.currentCount++
+            increaseCounter(name) {
+                this.foundedElements.push(name)
             },
             triggerStart() {
                 this.isStarted = true
@@ -63,7 +67,7 @@
 
 <style lang="css">
     body {
-        background: #225d78;
+        background: #b0d2e3;
         margin: 0;
         width: 100%;
         height: 100vh;
