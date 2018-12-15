@@ -84,7 +84,7 @@
     {
         "name": "santa",
         "isCounted": false,
-        "top": "16.32%",
+        "top": "17.1%",
         "left": "51.52%",
         "zIndex": 240,
         "modal": {
@@ -100,8 +100,8 @@
     {
         "name": "deer",
         "isCounted": false,
-        "top": "14.15%",
-        "left": "74.81%",
+        "top": "14.88%",
+        "left": "74.5%",
         "zIndex": 240,
         "modal": {
             "width": "12.2%",

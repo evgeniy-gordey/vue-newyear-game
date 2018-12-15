@@ -4,12 +4,14 @@
             v-for="element in elementsList" 
             :key="element.name"
             :increaseCounter="increaseCounter"
-            :data="element" />
+            :data="element"
+            :isMute="isMute" />
     </div>
 </template>
 
 <script>
     import ActiveElementsItem from './ActiveElementsItem.vue'
+
     export default {
         name: 'ActiveElements',
         components: {
@@ -22,6 +24,9 @@
             },
             increaseCounter: {
                 type: Function
+            },
+            isMute: {
+                type: Boolean
             }
         }
     }

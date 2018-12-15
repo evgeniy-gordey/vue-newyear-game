@@ -1,72 +1,51 @@
 <template>
-    <div class="end-screen">
-        <div class="end-screen__image">
-            <img src="../assets/end-screen.png" alt="" width="100%">
-            <img 
-                src="../assets/button.png" 
-                alt="" 
-                class="end-screen__button-phone"
-                @click="downloadImage()">
-            <img 
-                src="../assets/button.png" 
-                alt="" 
-                class="end-screen__button-desktop"
-                @click="downloadImage()">
+    <div class="end-screen" >
+        <End class="end"/>
+        <div 
+            class="end-button">
+            <router-link to="/gifts">
+                <EndButton />
+            </router-link>
         </div>
-        <div class="end-screen__overlay" />
+        <div class="end-under" />
     </div>
 </template>
 
 <script>
+    import End from '../svg/end.svg'
+    import EndButton from '../svg/end-button.svg'
+
     export default {
-        name: 'EndScreen',
-        methods: {
-            
+        name: 'endScreen',
+        components: {
+            End,
+            EndButton
         }
     }
 </script>
 
 <style lang="css" scoped>
-    .end-screen {
+    .end-under {
+        z-index: 9900;
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+        width: 100vw;
+        height: 100vh;
     }
 
-    .end-screen__image {
+    .end {
+        z-index: 10000;
         position: absolute;
-        overflow-y: scroll;
-        z-index: 21000;
-        width: 80%;
-        height: 90%;
-        top: 5%;
-        left: 10%;
-        background-color: green;
+        width: 50%;
+        top: 25%;
+        left: 25%;
     }
 
-    .end-screen__overlay {
+    .end-button {
         position: absolute;
-        z-index: 20500;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0, .5)
-    }
-
-    .end-screen__button-phone {
-        position: absolute;
+        z-index: 10010;
+        width: 20%;
+        top: 70%;
+        left: 40%;
         cursor: pointer;
-        width: 12%;
-        top: 137%;
-        left: 65%;
-    }
-
-    .end-screen__button-desktop {
-        position: absolute;
-        cursor: pointer;
-        width: 12%;
-        top: 168%;
-        left: 65%;
     }
 </style>

@@ -21,6 +21,7 @@
                 <component :is="modalLoader" />
             </div>
         </div>
+        <audio :ref="data.name" :src="`/sounds/${data.name}.mp3`" />
     </div>
 </template>
 
@@ -33,6 +34,9 @@
             },
             increaseCounter: {
                 type: Function
+            },
+            isMute: {
+                type: Boolean
             }
         },
         data: () => {
@@ -40,7 +44,7 @@
                 isHover: false,
                 isClicked: false,
                 wasClicked: false,
-                el: {}
+                el: {},
             }
         },
         computed: {
@@ -57,6 +61,7 @@
         methods: {
             mouseEnterHandler () {
                 this.isHover = true
+                if (!this.isMute) this.$refs[this.data.name].play()
             },
             mouseLeaveHandler () {
                 this.isHover = false
@@ -69,6 +74,11 @@
             },
             closeModal () {
                 this.isClicked = false;
+            }
+        },
+        watch: {
+            isMute(value) {
+                this.$refs[this.data.name].volume = !value
             }
         },
         mounted() {
