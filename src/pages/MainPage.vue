@@ -78,4 +78,10 @@
 </script>
 
 <style lang="css">
+    .main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex: 0 0 auto;
+    }
 </style>
