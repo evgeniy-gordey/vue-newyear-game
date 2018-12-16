@@ -10,6 +10,19 @@
     }
 </script>
 
-<style lang="css" scoped> 
-    
+<style lang="css"> 
+     body {
+        background: #b0d2e3;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .app {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+    }
 </style>

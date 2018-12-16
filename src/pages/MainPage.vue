@@ -5,7 +5,7 @@
             :elementsList="elementsList" 
             :increaseCounter="addFoundedElement" 
             :isMute="isMute" />
-        <AnimatedElements />
+        <!-- <AnimatedElements /> -->
         <Counter 
             :foundedElements="foundedElements"
             :currentCount="currentCount"
@@ -66,7 +66,7 @@
             ]),
             handleStartGame() {
                 this.startGame()
-                this.$refs.background.play()
+                // this.$refs.background.play()
             }
         },
         watch: {
@@ -78,16 +78,4 @@
 </script>
 
 <style lang="css">
-    body {
-        background: #b0d2e3;
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-    }
-
-    .app {
-        width: 100%;
-        display: grid;
-        position: relative;
-    }
 </style>
