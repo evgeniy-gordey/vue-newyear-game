@@ -52,13 +52,20 @@
         <div class="modal" v-if="isModalOpened" @click.prevent.self="closeModal()">
             <div class="modal__item modal__item_android-wp" v-if="modal.androidWp" >
                 <img src="/images/modals/android-wp.png" alt="">
+                <qr-code 
+                    class="modal__qr"
+                    size="120"
+                    :text="'https://sveza-new-year.com/images/mobile-wp-' + mobileWallpaper + '.png'" />
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
                 <img src="/images/modals/iphone-wp.png" alt="">
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
                 <img src="/images/modals/desktop-wp.png" alt="">
-                <img src="/images/button.png" alt="" class="modal__button">
+                <img 
+                    src="/images/button.png" 
+                    class="modal__button"
+                    @click="downloadDesktop(); closeModal()">
             </div>
         </div>
 
@@ -88,13 +95,6 @@
             },
             handleChangeDesktopSlider(index) {
                 this.desktopWallpaper = index
-            },
-            downloadMobile() {    
-                let a = document.createElement("a");
-                a.href = `/images/mobile-wp-${this.mobileWallpaper}.png`
-                a.download = `sveza-wallpaper.png`;
-                a.click()
-                a.remove()
             },
             downloadDesktop() {
                 let a = document.createElement("a");
@@ -178,8 +178,15 @@
 
     .modal__button {
         position: absolute;
+        cursor: pointer;
         width: 160px;
         top: 100px;
         left: 30px;
+    }
+
+    .modal__qr {
+        position: absolute;
+        top: 122px;
+        left: 62px;
     }
 </style>

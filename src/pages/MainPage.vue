@@ -5,7 +5,7 @@
             :elementsList="elementsList" 
             :increaseCounter="addFoundedElement" 
             :isMute="isMute" />
-        <!-- <AnimatedElements /> -->
+        <AnimatedElements />
         <Counter 
             :foundedElements="foundedElements"
             :currentCount="currentCount"
