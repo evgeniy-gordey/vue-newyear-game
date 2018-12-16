@@ -1,5 +1,11 @@
 <template>
     <div class="main">
+        <StaticElements />
+        <ActiveElements 
+            :elementsList="elementsList" 
+            :increaseCounter="addFoundedElement" 
+            :isMute="isMute" />
+        <AnimatedElements />
         <Counter 
             :foundedElements="foundedElements"
             :currentCount="currentCount"
@@ -7,11 +13,6 @@
         <StartScreen 
             v-if="!isStarted"
             :triggerStart="handleStartGame" />
-        <StaticElements />
-        <ActiveElements 
-            :elementsList="elementsList" 
-            :increaseCounter="addFoundedElement" 
-            :isMute="isMute" />
         <EndScreen 
             v-if="isEnded" 
             class="app__end-screen" />
@@ -26,6 +27,7 @@
 
     import ActiveElements from '../components/ActiveElements.vue'
     import StaticElements from '../components/StaticElements.vue'
+    import AnimatedElements from '../components/AnimatedElements.vue'
     import StartScreen from '../components/StartScreen.vue'
     import EndScreen from '../components/EndScreen.vue'
     import Counter from '../components/interface/Counter.vue'
@@ -37,6 +39,7 @@
         components: {
             ActiveElements,
             StaticElements,
+            AnimatedElements,
             StartScreen,
             EndScreen,
             Counter,
