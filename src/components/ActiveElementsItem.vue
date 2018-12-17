@@ -14,7 +14,8 @@
         <div class="active-element__modal-wrapper">
             <div 
                 class="active-element__modal-overlay"
-                @mouseenter="closeModal()" />
+                @mouseenter="closeModal()"
+                @click="closeModal()" />
             <div 
                 class="active-element__modal"
                 :style="{ top: data.top, left: data.left, width: data.modal.width, height: data.modal.height, marginTop: data.modal.marginTop, marginLeft: data.modal.marginLeft, zIndex: data.modal.zIndex ? 1100 + data.modal.zIndex : 1100 }">

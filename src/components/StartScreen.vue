@@ -32,8 +32,9 @@
     .start-under {
         z-index: 9900;
         position: absolute;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
+        top: 0;
     }
 
     .start {

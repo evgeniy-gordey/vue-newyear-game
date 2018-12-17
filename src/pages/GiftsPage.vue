@@ -11,14 +11,8 @@
             :perspective="0"
             :controls-visible="true"
             @after-slide-change="this.handleChangeMobileSlider" >
-            <slide :index="0">
-                <img src="/images/mobile-wp-0.png" width="100%" alt="">
-            </slide>
-            <slide :index="1">
-                <img src="/images/mobile-wp-1.png" width="100%" alt="">
-            </slide>
-            <slide :index="2">
-                <img src="/images/mobile-wp-2.png" width="100%" alt="">
+            <slide v-for="(slide, i) in wallpapers.mobile" :index="i" :key="i">
+                <img :src="slide" width="100%" alt="">
             </slide>
         </carousel-3d>
 
@@ -31,14 +25,8 @@
             :perspective="0"
             :controls-visible="true"
             @after-slide-change="this.handleChangeDesktopSlider" >
-            <slide :index="0">
-                <img src="/images/desktop-wp-0.png" width="100%" alt="">
-            </slide>
-            <slide :index="1">
-                <img src="/images/desktop-wp-1.png" width="100%" alt="">
-            </slide>
-            <slide :index="2">
-                <img src="/images/desktop-wp-2.png" width="100%" alt="">
+            <slide v-for="(slide, i) in wallpapers.desktop" :index="i" :key="i">
+                <img :src="slide" width="100%" alt="">
             </slide>
         </carousel-3d>
 
@@ -51,35 +39,8 @@
             :perspective="0"
             :controls-visible="true"
             @after-slide-change="this.handleChangeRingtoneSlider" >
-            <slide :index="0">
-                <img src="/images/ru/ringtones/ringtone-0.png" width="100%" alt="">
-            </slide>
-            <slide :index="1">
-                <img src="/images/ru/ringtones/ringtone-1.png" width="100%" alt="">
-            </slide>
-            <slide :index="2">
-                <img src="/images/ru/ringtones/ringtone-2.png" width="100%" alt="">
-            </slide>
-            <slide :index="3">
-                <img src="/images/ru/ringtones/ringtone-3.png" width="100%" alt="">
-            </slide>
-            <slide :index="4">
-                <img src="/images/ru/ringtones/ringtone-4.png" width="100%" alt="">
-            </slide>
-            <slide :index="5">
-                <img src="/images/ru/ringtones/ringtone-5.png" width="100%" alt="">
-            </slide>
-            <slide :index="6">
-                <img src="/images/ru/ringtones/ringtone-6.png" width="100%" alt="">
-            </slide>
-            <slide :index="7">
-                <img src="/images/ru/ringtones/ringtone-7.png" width="100%" alt="">
-            </slide>
-            <slide :index="8">
-                <img src="/images/ru/ringtones/ringtone-8.png" width="100%" alt="">
-            </slide>
-            <slide :index="9">
-                <img src="/images/ru/ringtones/ringtone-9.png" width="100%" alt="">
+            <slide v-for="(slide, i) in ringtones" :index="i" :key="i">
+                <img :src="'/images/ru/ringtones/ringtone-' + i + '.png'" width="100%" alt="">
             </slide>
         </carousel-3d>
 
@@ -115,14 +76,14 @@
                 <qr-code 
                     class="modal__qr"
                     :size="120"
-                    :text="'sveza-new-year.com/images/mobile-wp-' + mobileWallpaper + '.png'" />
+                    :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
                 <img src="/images/ru/modals/iphone-wp.png" alt="">
                 <qr-code 
                     class="modal__qr"
                     :size="120"
-                    :text="'sveza-new-year.com/images/mobile-wp-' + mobileWallpaper + '.png'" />
+                    :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
                 <img src="/images/ru/modals/desktop-wp.png" alt="">
@@ -136,7 +97,7 @@
                 <qr-code 
                     class="modal__qr"
                     :size="120"
-                    :text="'sveza-new-year.com/sounds/gifts/basic/sound-' + ringtone + '.mp3'" />
+                    :text="'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3'" />
             </div>
             <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
                 <img src="/images/ru/modals/iphone-ringtone.png" alt="">
@@ -147,16 +108,16 @@
             </div>
         </div>
 
-        <audio ref="sound-0" src="/sounds/gifts/basic/sound-0.mp3" />
-        <audio ref="sound-1" src="/sounds/gifts/basic/sound-1.mp3" />
-        <audio ref="sound-2" src="/sounds/gifts/basic/sound-2.mp3" />
-        <audio ref="sound-3" src="/sounds/gifts/basic/sound-3.mp3" />
-        <audio ref="sound-4" src="/sounds/gifts/basic/sound-4.mp3" />
-        <audio ref="sound-5" src="/sounds/gifts/basic/sound-5.mp3" />
-        <audio ref="sound-6" src="/sounds/gifts/basic/sound-6.mp3" />
-        <audio ref="sound-7" src="/sounds/gifts/basic/sound-7.mp3" />
-        <audio ref="sound-8" src="/sounds/gifts/basic/sound-8.mp3" />
-        <audio ref="sound-9" src="/sounds/gifts/basic/sound-9.mp3" />
+        <audio ref="sound0" src="/sounds/gifts/basic/01_kto_tam.mp3" />
+        <audio ref="sound1" src="/sounds/gifts/basic/02_molodoy_dyatel_na _bereze.mp3" />
+        <audio ref="sound2" src="/sounds/gifts/basic/03_zhena_zvonit.mp3" />
+        <audio ref="sound3" src="/sounds/gifts/basic/04_surpriz_za_dveryu.mp3" />
+        <audio ref="sound4" src="/sounds/gifts/basic/05_prizhok_v_vodu_s_mirovim_recordom.mp3" />
+        <audio ref="sound5" src="/sounds/gifts/basic/06_kokteyl_buratino.mp3" />
+        <audio ref="sound6" src="/sounds/gifts/basic/07_k_zime_gotovi.mp3" />
+        <audio ref="sound7" src="/sounds/gifts/basic/08_skelet_v_shkafu.mp3" />
+        <audio ref="sound8" src="/sounds/gifts/basic/09_sovershenno_secretno.mp3" />
+        <audio ref="sound9" src="/sounds/gifts/basic/10_tantsuyte_vam_zvonyat.mp3" />
 
     </div>
 </template>
@@ -181,6 +142,34 @@
                         height: null
                     }
                 },
+                wallpapers: {
+                    mobile: [
+                        "/images/sveza_tel-01.jpg",
+                        "/images/sveza_tel-02.jpg",
+                        "/images/sveza_tel-03.jpg",
+                        "/images/sveza_tel-04.jpg",
+                        "/images/sveza_tel-05.jpg",
+                    ],
+                    desktop: [
+                        "/images/sveza_comp-01.jpg",
+                        "/images/sveza_comp-02.jpg",
+                        "/images/sveza_comp-03.jpg",
+                        "/images/sveza_comp-04.jpg",
+                        "/images/sveza_comp-05.jpg",
+                    ]
+                },
+                ringtones: [
+                    '01_kto_tam',
+                    '02_molodoy_dyatel_na _bereze',
+                    '03_zhena_zvonit',
+                    '04_surpriz_za_dveryu',
+                    '05_prizhok_v_vodu_s_mirovim_recordom',
+                    '06_kokteyl_buratino',
+                    '07_k_zime_gotovi',
+                    '08_skelet_v_shkafu',
+                    '09_sovershenno_secretno',
+                    '10_tantsuyte_vam_zvonyat'
+                ],
                 mobileWallpaper: 0,
                 desktopWallpaper: 0,
                 ringtone: 0,
@@ -197,24 +186,25 @@
         computed: mapGetters(['lang']),
         methods: {
             handleChangeMobileSlider(index) { 
-                this.mobileWallpaper = index
+                this.mobileWallpaper = index + 1
             },
             handleChangeDesktopSlider(index) {
-                this.desktopWallpaper = index
+                this.desktopWallpaper = index + 1
             },
             handleChangeRingtoneSlider(index) {
                 this.ringtone = index
             },
             downloadDesktop() {
                 let a = document.createElement("a");
-                a.href = `/images/desktop-wp-${this.desktopWallpaper}.png`
-                a.download = `sveza-wallpaper.png`;
+                a.href = `/images/sveza_comp-0${this.desktopWallpaper}.jpg`
+                a.download = `sveza_comp-0${this.desktopWallpaper}.jpg`;
                 a.click()
                 a.remove()
             },
             openModal(target) {
                 this.modal[target] = true
                 this.isModalOpened = true
+                document.body.className = 'modal-opened'
             },
             closeModal() {
                 this.modal = {
@@ -225,15 +215,16 @@
                     iphoneRingtone: false
                 }
                 this.isModalOpened = false
+                document.body.className = ''
             },
             playSound() {
-                const ringtoneName = `sound-${this.ringtone}`
-                this.$refs[ringtoneName].play()
+                const ref = 'sound' + this.ringtone
+                this.$refs[ref].play()
             },
             downloadSound() {
                 let a = document.createElement("a");
-                a.href = `/sounds/gifts/iphone/sound-${this.ringtone}.m4r`
-                a.download = `sveza-ringtone.m4r`;
+                a.href = `/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`
+                a.download = `${this.ringtones[this.ringtone]}.m4r`;
                 a.click()
                 a.remove()
             },
@@ -335,6 +326,7 @@
     .modal__item {
         display: flex;
         position: relative;
+        max-height: 90vh;
     }
 
     .modal__button {

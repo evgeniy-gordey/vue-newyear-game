@@ -8,7 +8,7 @@
                 :elementsList="elementsList" 
                 :increaseCounter="addFoundedElement" 
                 :isMute="isMute" />
-            <AnimatedElements />
+            <AnimatedElements v-if="isStarted" />
             <Counter 
                 :foundedElements="foundedElements"
                 :currentCount="currentCount"
