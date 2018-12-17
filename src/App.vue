@@ -10,8 +10,16 @@
     }
 </script>
 
-<style lang="css"> 
-     body {
+<style lang="css">
+    @font-face {
+        font-family: Freakomix;
+        src: url("/fonts/freakomix.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    body {
+        font-family: Freakomix;
         background: #b0d2e3;
         margin: 0;
         width: 100%;
@@ -27,5 +35,4 @@
         width: 100%;
         height: 100%;
     }
-
 </style>

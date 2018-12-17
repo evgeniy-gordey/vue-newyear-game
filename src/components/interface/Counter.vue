@@ -44,7 +44,7 @@
     .counter ul {
         padding: 0;
         list-style: none;
-        font-size: 18px;
+        font-size: 10px;
     }
     
     .counter__check {

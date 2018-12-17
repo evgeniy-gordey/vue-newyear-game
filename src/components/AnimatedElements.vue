@@ -37,7 +37,7 @@
         will-change: transform;
         animation:linear infinite normal;
         animation-name: fly;
-        animation-duration: 30s;
+        animation-duration: 70s;
     }
 
     .cloud-big {
@@ -49,7 +49,7 @@
         will-change: transform;
         animation:linear infinite normal;
         animation-name: fly;
-        animation-duration: 20s;
+        animation-duration: 45s;
     }
 
     @keyframes fly {

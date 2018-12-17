@@ -1,28 +1,34 @@
 <template>
     <div class="static-elements">
+        <SantaWithDeers class="santa-with-deers" />
         <Background class="bg" />
         <House class="house" />
         <Front class="front" />
         <Moon class="moon" />
-        <SantaWithDeers class="santa-with-deers" />
+        <Logo class="logo" />
+        <Stars class="stars" />
     </div>
 </template>
 
 <script>
+    import SantaWithDeers from '../svg/santa-with-deers.svg' 
     import Background from '../svg/background.svg'
     import House from '../svg/house.svg' 
     import Front from '../svg/front.svg' 
     import Moon from '../svg/moon.svg' 
-    import SantaWithDeers from '../svg/santa-with-deers.svg' 
+    import Logo from '../svg/logo.svg' 
+    import Stars from '../svg/stars.svg' 
 
     export default {
         name: 'StaticElements',
         components: {
+            SantaWithDeers,
             Background,
             House,
             Front,
             Moon,
-            SantaWithDeers
+            Logo,
+            Stars
         }
     }
 </script>
@@ -73,5 +79,21 @@
         top: 14%;
         left: 51.6%;
         z-index: 160;
+    }
+
+    .logo {
+        position: absolute;
+        width: 12%;
+        top: 31%;
+        left: 40%;
+        z-index: 260;
+    }
+
+    .stars {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 110;
     }
 </style>

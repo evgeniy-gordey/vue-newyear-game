@@ -368,16 +368,16 @@
         "isCounted": true,
         "title": "Отделка стен",
         "top": "44%",
-        "left": "74.6%",
+        "left": "38.4%",
         "zIndex": 240,
         "modal": {
-            "width": "12.2%",
-            "marginTop": "-7%",
-            "marginLeft": "-3%"
+            "width": "15.2%",
+            "marginTop": "-9.2%",
+            "marginLeft": "31%"
         },
         "tooltip": {
-            "marginTop": "-4%",
-            "marginLeft": "-2%"
+            "marginTop": "-5%",
+            "marginLeft": "32%"
         }
     },
     {

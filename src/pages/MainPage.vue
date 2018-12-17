@@ -19,7 +19,6 @@
             <EndScreen 
                 v-if="isEnded" 
                 class="app__end-screen" />
-            <ChangeLanguage />
             <MuteSound />
             <audio ref="background" src="/sounds/background.mp3" loop />
         </div>
@@ -35,7 +34,6 @@
     import StartScreen from '../components/StartScreen.vue'
     import EndScreen from '../components/EndScreen.vue'
     import Counter from '../components/interface/Counter.vue'
-    import ChangeLanguage from '../components/interface/ChangeLanguage.vue'
     import MuteSound from '../components/interface/MuteSound.vue'
 
     export default {
@@ -47,7 +45,6 @@
             StartScreen,
             EndScreen,
             Counter,
-            ChangeLanguage,
             MuteSound
         },
         computed: {

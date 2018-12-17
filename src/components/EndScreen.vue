@@ -3,7 +3,7 @@
         <End class="end"/>
         <div 
             class="end-button">
-            <router-link to="/gifts">
+            <router-link to="/gifts" target="_blank">
                 <EndButton />
             </router-link>
         </div>
