@@ -10,6 +10,10 @@
             :height="carousel.mobile.height"
             :perspective="0"
             :controls-visible="true"
+            :controls-prev-html="'<img height=100% src=/images/left-arrow.png />'" 
+            :controls-next-html="'<img height=100% src=/images/right-arrow.png />'" 
+            :controls-width="carousel.arrows.width"
+            :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeMobileSlider" >
             <slide v-for="(slide, i) in wallpapers.mobile" :index="i" :key="i">
                 <img :src="slide" width="100%" alt="">
@@ -24,6 +28,10 @@
             :height="carousel.desktop.height"
             :perspective="0"
             :controls-visible="true"
+            :controls-prev-html="'<img height=100% src=/images/left-arrow.png />'" 
+            :controls-next-html="'<img height=100% src=/images/right-arrow.png />'" 
+            :controls-width="carousel.arrows.width"
+            :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeDesktopSlider" >
             <slide v-for="(slide, i) in wallpapers.desktop" :index="i" :key="i">
                 <img :src="slide" width="100%" alt="">
@@ -38,6 +46,10 @@
             :height="carousel.ringtones.height"
             :perspective="0"
             :controls-visible="true"
+            :controls-prev-html="'<img height=100% src=/images/left-arrow.png />'" 
+            :controls-next-html="'<img height=100% src=/images/right-arrow.png />'" 
+            :controls-width="carousel.arrows.width"
+            :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeRingtoneSlider" >
             <slide v-for="(slide, i) in ringtones" :index="i" :key="i">
                 <img :src="'/images/ru/ringtones/ringtone-' + i + '.png'" width="100%" alt="">
@@ -138,6 +150,10 @@
                         height: null
                     },
                     ringtones: {
+                        width: null,
+                        height: null
+                    },
+                    arrows: {
                         width: null,
                         height: null
                     }
@@ -243,6 +259,10 @@
             this.carousel.ringtones = {
                 width: globalWidth * 0.25,
                 height: globalWidth * 0.15
+            }
+            this.carousel.arrows = {
+                width: globalWidth * 0.08,
+                height: globalWidth * 0.05
             }
         }
     }
