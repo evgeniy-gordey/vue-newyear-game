@@ -22,6 +22,7 @@
             </div>
         </div>
         <audio :ref="data.name" :src="`/sounds/${data.name}.mp3`" />
+        <audio ref="hoverSound" src="/sounds/hover-sound.mp3" />
     </div>
 </template>
 
@@ -61,12 +62,13 @@
         methods: {
             mouseEnterHandler () {
                 this.isHover = true
-                if (!this.isMute) this.$refs[this.data.name].play()
+                if (!this.isMute) this.$refs.hoverSound.play()
             },
             mouseLeaveHandler () {
                 this.isHover = false
             },
             openModal () {
+                if (!this.isMute) this.$refs[this.data.name].play()
                 this.isClicked = true
                 this.isHover = false
                 if (this.data.isCounted && !this.wasClicked) this.increaseCounter(this.data.title)

@@ -1,24 +1,28 @@
 <template>
     <div class="main">
-        <StaticElements />
-        <ActiveElements 
-            :elementsList="elementsList" 
-            :increaseCounter="addFoundedElement" 
-            :isMute="isMute" />
-        <AnimatedElements />
-        <Counter 
-            :foundedElements="foundedElements"
-            :currentCount="currentCount"
-            :maxCount="maxCount" />
-        <StartScreen 
-            v-if="!isStarted"
-            :triggerStart="handleStartGame" />
-        <EndScreen 
-            v-if="isEnded" 
-            class="app__end-screen" />
-        <ChangeLanguage />
-        <MuteSound />
-        <audio ref="background" src="/sounds/background.mp3" loop />
+        <div class="main__background-top" />
+        <div class="main__background-bottom" />
+        <div class="main__wrapper">
+            <StaticElements />
+            <ActiveElements 
+                :elementsList="elementsList" 
+                :increaseCounter="addFoundedElement" 
+                :isMute="isMute" />
+            <AnimatedElements />
+            <Counter 
+                :foundedElements="foundedElements"
+                :currentCount="currentCount"
+                :maxCount="maxCount" />
+            <StartScreen 
+                v-if="!isStarted"
+                :triggerStart="handleStartGame" />
+            <EndScreen 
+                v-if="isEnded" 
+                class="app__end-screen" />
+            <ChangeLanguage />
+            <MuteSound />
+            <audio ref="background" src="/sounds/background.mp3" loop />
+        </div>
     </div>
 </template>
 
@@ -66,7 +70,7 @@
             ]),
             handleStartGame() {
                 this.startGame()
-                // this.$refs.background.play()
+                this.$refs.background.play()
             }
         },
         watch: {
@@ -79,9 +83,47 @@
 
 <style lang="css">
     .main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+        justify-content: center;
+    }
+
+    .main__wrapper {
         display: flex;
         flex-direction: column;
         position: relative;
         flex: 0 0 auto;
+    }
+
+    .main__background-top {
+        position: absolute;
+        top: 0;
+        height: 50vh;
+        width: 100%;
+        background: #1e3e4f;
+    }
+
+    .main__background-bottom {
+        position: absolute;
+        top: 50%;
+        height: 50vh;
+        width: 100%;
+        background: #b0d2e3;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+        .main {
+            justify-content: flex-start;
+        }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        .main {
+            overflow: hidden;
+        }
     }
 </style>
