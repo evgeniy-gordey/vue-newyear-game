@@ -56,30 +56,42 @@
             </slide>
         </carousel-3d>
 
-        <img 
-            src="/images/ru/button-android.png" 
+        <Button 
+            main="/images/ru/button-android/button.png" 
+            hover="/images/ru/button-android/button-hover.png" 
+            clicked="/images/ru/button-android/button-clicked.png" 
             class="button button_android-wp"
-            @click="openModal('androidWp')">
-        <img 
-            src="/images/ru/button-iphone.png" 
+            @click.native="openModal('androidWp')" />
+        <Button 
+            main="/images/ru/button-iphone/button.png" 
+            hover="/images/ru/button-iphone/button-hover.png" 
+            clicked="/images/ru/button-iphone/button-clicked.png" 
             class="button button_iphone-wp"
-            @click="openModal('iphoneWp')">
-        <img 
-            src="/images/ru/button.png" 
+            @click.native="openModal('iphoneWp')" />
+        <Button 
+            main="/images/ru/button-download/button.png" 
+            hover="/images/ru/button-download/button-hover.png" 
+            clicked="/images/ru/button-download/button-clicked.png" 
             class="button button_desktop"
-            @click="openModal('desktopWp')">
-        <img 
-            src="/images/hear-button.png" 
+            @click.native="openModal('desktopWp')" />
+        <Button 
+            main="/images/button-hear/button.png" 
+            hover="/images/button-hear/button-hover.png" 
+            clicked="/images/button-hear/button-clicked.png" 
             class="button_hear"
-            @click="playSound()">
-        <img 
-            src="/images/ru/button-android.png" 
+            @click.native="playSound()" />
+        <Button 
+            main="/images/ru/button-android/button.png" 
+            hover="/images/ru/button-android/button-hover.png" 
+            clicked="/images/ru/button-android/button-clicked.png" 
             class="button button_android-ringtone"
-            @click="openModal('androidRingtone')">
-        <img 
-            src="/images/ru/button-iphone.png" 
+            @click.native="openModal('androidRingtone')" />
+        <Button 
+            main="/images/ru/button-iphone/button.png" 
+            hover="/images/ru/button-iphone/button-hover.png" 
+            clicked="/images/ru/button-iphone/button-clicked.png" 
             class="button button_iphone-ringtone"
-            @click="openModal('iphoneRingtone')">
+            @click.native="openModal('iphoneRingtone')" />
         
 
         <div class="modal" v-if="isModalOpened" @click.prevent.self="closeModal()">
@@ -99,10 +111,12 @@
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
                 <img src="/images/ru/modals/desktop-wp.png" alt="">
-                <img 
-                    src="/images/ru/button.png" 
+                <Button 
+                    main="/images/ru/button-download/button.png" 
+                    hover="/images/ru/button-download/button-hover.png" 
+                    clicked="/images/ru/button-download/button-clicked.png" 
                     class="modal__button"
-                    @click="downloadDesktop(); closeModal()">
+                    @click.native="downloadDesktop(); closeModal()" />
             </div>
             <div class="modal__item modal__item_android-ringtone" v-if="modal.androidRingtone" >
                 <img src="/images/ru/modals/android-ringtone.png" alt="">
@@ -113,10 +127,12 @@
             </div>
             <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
                 <img src="/images/ru/modals/iphone-ringtone.png" alt="">
-                <img 
-                    src="/images/ru/button.png" 
+                <Button 
+                    main="/images/ru/button.png"
+                    hover="/images/ru/button.png"
+                    clicked="/images/ru/button.png"
                     class="modal__button"
-                    @click="downloadSound(); closeModal()">
+                    @click.native="downloadSound(); closeModal()" />
             </div>
         </div>
 
@@ -136,8 +152,13 @@
 
 <script>
     import { mapGetters } from 'vuex'
+
+    import Button from '../components/interface/Button.vue'
     export default {
         name: 'GiftsPage',
+        components: {
+            Button
+        },
         data() {
             return {
                 carousel: {

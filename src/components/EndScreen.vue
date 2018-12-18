@@ -4,7 +4,10 @@
         <div 
             class="end-button">
             <router-link to="/gifts" target="_blank">
-                <EndButton />
+                <Button
+                    main="/images/ru/button-end/button.png" 
+                    hover="/images/ru/button-end/button-hover.png" 
+                    clicked="/images/ru/button-end/button-clicked.png" />
             </router-link>
         </div>
         <div class="end-under" />
@@ -13,13 +16,13 @@
 
 <script>
     import End from '../svg/end.svg'
-    import EndButton from '../svg/end-button.svg'
+    import Button from './interface/Button.vue'
 
     export default {
         name: 'endScreen',
         components: {
             End,
-            EndButton
+            Button
         }
     }
 </script>

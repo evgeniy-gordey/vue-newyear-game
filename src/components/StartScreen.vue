@@ -1,24 +1,25 @@
 <template>
     <div class="start-screen" >
         <Start class="start"/>
-        <div 
-            class="start-button" 
-            @click="triggerStart()">
-            <StartButton />
-        </div>
+        <Button 
+            main="/images/ru/button-start/button.png" 
+            hover="/images/ru/button-start/button-hover.png" 
+            clicked="/images/ru/button-start/button-clicked.png" 
+            class="start-button"
+            @click.native="triggerStart()" />
         <div class="start-under" />
     </div>
 </template>
 
 <script>
     import Start from '../svg/start.svg'
-    import StartButton from '../svg/start-button.svg'
+    import Button from './interface/Button.vue'
 
     export default {
         name: 'StartScreen',
         components: {
             Start,
-            StartButton
+            Button
         },
         props: {
             triggerStart: {
