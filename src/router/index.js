@@ -5,9 +5,29 @@ import MainPage from '../pages/MainPage.vue'
 import GiftsPage from '../pages/GiftsPage.vue'
 
 const routes = [
-    { path: '/', component: MainPage },
-    { path: '/gifts', component: GiftsPage },
-  ]
+  {
+    path: '',
+    component: {
+      render (c) { return c('router-view') }
+    },
+    children: [
+      { path: '', component: MainPage },
+      { path: 'gifts', component: GiftsPage }
+    ],
+    meta: { lang: 'en' }
+  },
+  {
+    path: '/ru',
+    component: {
+      render (c) { return c('router-view') }
+    },
+    children: [
+      { path: '', component: MainPage },
+      { path: 'gifts', component: GiftsPage }
+    ],
+    meta: { lang: 'ru' }
+  }
+]
 
 Vue.use(VueRouter)
 const router = new VueRouter({
