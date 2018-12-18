@@ -101,6 +101,12 @@
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
+                <Button 
+                    main="/images/ru/button-download/button.png" 
+                    hover="/images/ru/button-download/button-hover.png" 
+                    clicked="/images/ru/button-download/button-clicked.png" 
+                    class="modal__button_withqr"
+                    @click.native="downloadMobileWp(); closeModal()" />
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
                 <img src="/images/ru/modals/iphone-wp.png" alt="">
@@ -108,6 +114,12 @@
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
+                <Button 
+                    main="/images/ru/button-download/button.png" 
+                    hover="/images/ru/button-download/button-hover.png" 
+                    clicked="/images/ru/button-download/button-clicked.png" 
+                    class="modal__button_withqr"
+                    @click.native="downloadMobileWp(); closeModal()" />
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
                 <img src="/images/ru/modals/desktop-wp.png" alt="">
@@ -116,7 +128,7 @@
                     hover="/images/ru/button-download/button-hover.png" 
                     clicked="/images/ru/button-download/button-clicked.png" 
                     class="modal__button"
-                    @click.native="downloadDesktop(); closeModal()" />
+                    @click.native="downloadDesktopWp(); closeModal()" />
             </div>
             <div class="modal__item modal__item_android-ringtone" v-if="modal.androidRingtone" >
                 <img src="/images/ru/modals/android-ringtone.png" alt="">
@@ -124,15 +136,29 @@
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3'" />
+                <Button 
+                    main="/images/ru/button-download/button.png"
+                    hover="/images/ru/button-download/button-hover.png"
+                    clicked="/images/ru/button-download/button-clicked.png"
+                    class="modal__button_withqr"
+                    @click.native="downloadMp3(); closeModal()" />
             </div>
             <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
                 <img src="/images/ru/modals/iphone-ringtone.png" alt="">
                 <Button 
-                    main="/images/ru/button.png"
-                    hover="/images/ru/button.png"
-                    clicked="/images/ru/button.png"
+                    main="/images/ru/button-download/button.png"
+                    hover="/images/ru/button-download/button-hover.png"
+                    clicked="/images/ru/button-download/button-clicked.png"
                     class="modal__button"
-                    @click.native="downloadSound(); closeModal()" />
+                    @click.native="downloadM4r(); closeModal()" />
+                <a 
+                    href="https://www.apple.com/ru/itunes/download/" 
+                    @click="goItunes()" 
+                    class="modal__itunes" 
+                    target="_blank">
+                    Скачать iTunes<br>
+                    для Windows
+                </a>
             </div>
         </div>
 
@@ -231,7 +257,14 @@
             handleChangeRingtoneSlider(index) {
                 this.ringtone = index
             },
-            downloadDesktop() {
+            downloadMobileWp() {
+                let a = document.createElement("a");
+                a.href = `/images/sveza_tel-0${this.desktopWallpaper}.jpg`
+                a.download = `sveza_tel-0${this.desktopWallpaper}.jpg`;
+                a.click()
+                a.remove()
+            },
+            downloadDesktopWp() {
                 let a = document.createElement("a");
                 a.href = `/images/sveza_comp-0${this.desktopWallpaper}.jpg`
                 a.download = `sveza_comp-0${this.desktopWallpaper}.jpg`;
@@ -258,13 +291,23 @@
                 const ref = 'sound' + this.ringtone
                 this.$refs[ref].play()
             },
-            downloadSound() {
+            downloadMp3() {
+                let a = document.createElement("a");
+                a.href = `/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`
+                a.download = `${this.ringtones[this.ringtone]}.mp3`;
+                a.click()
+                a.remove()
+            },
+            downloadM4r() {
                 let a = document.createElement("a");
                 a.href = `/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`
                 a.download = `${this.ringtones[this.ringtone]}.m4r`;
                 a.click()
                 a.remove()
             },
+            goItunes() {
+                window.open('https://www.apple.com/ru/itunes/download/', '_blank')
+            }
         },
         mounted() {
             let globalWidth = window.innerWidth
@@ -367,7 +410,6 @@
     .modal__item {
         display: flex;
         position: relative;
-        max-height: 90vh;
     }
 
     .modal__button {
@@ -375,12 +417,26 @@
         cursor: pointer;
         width: 160px;
         top: 100px;
-        left: 30px;
+        left: 45px;
+    }
+
+    .modal__button_withqr {
+        position: absolute;
+        cursor: pointer;
+        width: 160px;
+        top: 280px;
+        left: 45px;
     }
 
     .modal__qr {
         position: absolute;
         top: 122px;
         left: 62px;
+    }
+
+    .modal__itunes {
+        position: absolute;
+        top: 165px;
+        left: 45px;
     }
 </style>
