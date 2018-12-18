@@ -4,9 +4,9 @@
         <Button 
             main="/images/ru/button-start/button.png" 
             hover="/images/ru/button-start/button-hover.png" 
-            clicked="/images/ru/button-start/button-clicked.png" 
-            class="start-button"
-            @click.native="triggerStart()" />
+            clicked="/images/ru/button-start/button-clicked.png"
+            @click.native="triggerStart()"
+            class="start-button" />
         <div class="start-under" />
     </div>
 </template>

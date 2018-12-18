@@ -24,16 +24,26 @@
 </script>
 
 <style lang="css" scoped>
+    
     .button__main {
         display: block;
+        position: absolute;
+        top: 0;
+        z-index: 110;
     }
 
     .button__hover {
         display: none;
+        position: absolute;
+        top: 0;
+        z-index: 120;
     }
 
     .button__clicked {
         display: none;
+        position: absolute;
+        top: 0;
+        z-index: 130;
     }
 
     .button:hover .button__hover {
@@ -43,10 +53,13 @@
         display: none;
     }
 
-    .button:active .button__hover {
-        display: none;
-    }
     .button:active .button__clicked {
         display: block;
+    }
+
+    @-moz-document url-prefix() {
+        .button:active .button__clicked {
+            display: none !important;
+        }
     }
 </style>

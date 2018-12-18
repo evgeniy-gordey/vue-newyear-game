@@ -8,6 +8,7 @@
             class="carousel"
             :width="carousel.mobile.width"
             :height="carousel.mobile.height"
+            :space="carousel.mobile.space"
             :perspective="0"
             :controls-visible="true"
             :controls-prev-html="'<img height=100% src=/images/left-arrow.png />'" 
@@ -26,6 +27,7 @@
             class="carousel2" 
             :width="carousel.desktop.width"
             :height="carousel.desktop.height"
+            :space="carousel.desktop.space"
             :perspective="0"
             :controls-visible="true"
             :controls-prev-html="'<img height=100% src=/images/left-arrow.png />'" 
@@ -44,6 +46,7 @@
             class="carousel3" 
             :width="carousel.ringtones.width"
             :height="carousel.ringtones.height"
+            :space="carousel.ringtones.space"
             :perspective="0"
             :controls-visible="true"
             :controls-prev-html="'<img height=100% src=/images/left-arrow.png />'" 
@@ -94,19 +97,23 @@
             @click.native="openModal('iphoneRingtone')" />
         
 
-        <div class="modal" v-if="isModalOpened" @click.prevent.self="closeModal()">
+        <div class="modal" v-if="isModalOpened" @click.self.prevent="closeModal()">
             <div class="modal__item modal__item_android-wp" v-if="modal.androidWp" >
                 <img src="/images/ru/modals/android-wp.png" alt="">
                 <qr-code 
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
-                <Button 
-                    main="/images/ru/button-download/button.png" 
-                    hover="/images/ru/button-download/button-hover.png" 
-                    clicked="/images/ru/button-download/button-clicked.png" 
-                    class="modal__button_withqr"
-                    @click.native="downloadMobileWp(); closeModal()" />
+                <a :href="`/images/sveza_tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
+                    <Button 
+                        main="/images/ru/button-download/button.png" 
+                        hover="/images/ru/button-download/button-hover.png" 
+                        clicked="/images/ru/button-download/button-clicked.png" 
+                        class="modal__button_withqr" />
+                </a>
+                <span class="modal__link">
+                    {{ 'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg' }}
+                </span>
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
                 <img src="/images/ru/modals/iphone-wp.png" alt="">
@@ -114,21 +121,26 @@
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
-                <Button 
-                    main="/images/ru/button-download/button.png" 
-                    hover="/images/ru/button-download/button-hover.png" 
-                    clicked="/images/ru/button-download/button-clicked.png" 
-                    class="modal__button_withqr"
-                    @click.native="downloadMobileWp(); closeModal()" />
+                <a :href="`/images/sveza_tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
+                    <Button 
+                        main="/images/ru/button-download/button.png" 
+                        hover="/images/ru/button-download/button-hover.png" 
+                        clicked="/images/ru/button-download/button-clicked.png" 
+                        class="modal__button_withqr" />
+                </a>
+                <span class="modal__link">
+                    {{ 'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg' }}
+                </span>
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
                 <img src="/images/ru/modals/desktop-wp.png" alt="">
-                <Button 
-                    main="/images/ru/button-download/button.png" 
-                    hover="/images/ru/button-download/button-hover.png" 
-                    clicked="/images/ru/button-download/button-clicked.png" 
-                    class="modal__button"
-                    @click.native="downloadDesktopWp(); closeModal()" />
+                <a :href="`/images/sveza_comp-0${this.desktopWallpaper}.jpg`" target="_blank" download>
+                    <Button 
+                        main="/images/ru/button-download/button.png" 
+                        hover="/images/ru/button-download/button-hover.png" 
+                        clicked="/images/ru/button-download/button-clicked.png" 
+                        class="modal__button" />
+                </a>
             </div>
             <div class="modal__item modal__item_android-ringtone" v-if="modal.androidRingtone" >
                 <img src="/images/ru/modals/android-ringtone.png" alt="">
@@ -136,24 +148,28 @@
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3'" />
-                <Button 
-                    main="/images/ru/button-download/button.png"
-                    hover="/images/ru/button-download/button-hover.png"
-                    clicked="/images/ru/button-download/button-clicked.png"
-                    class="modal__button_withqr"
-                    @click.native="downloadMp3(); closeModal()" />
+                <a :href="`/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`" target="_blank" download>
+                    <Button 
+                        main="/images/ru/button-download/button.png"
+                        hover="/images/ru/button-download/button-hover.png"
+                        clicked="/images/ru/button-download/button-clicked.png"
+                        class="modal__button_withqr" />
+                </a>
+                <span class="modal__link">
+                    {{ 'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3' }}
+                </span>
             </div>
             <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
                 <img src="/images/ru/modals/iphone-ringtone.png" alt="">
-                <Button 
-                    main="/images/ru/button-download/button.png"
-                    hover="/images/ru/button-download/button-hover.png"
-                    clicked="/images/ru/button-download/button-clicked.png"
-                    class="modal__button"
-                    @click.native="downloadM4r(); closeModal()" />
+                <a :href="`/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`" target="_blank" download>
+                    <Button 
+                        main="/images/ru/button-download/button.png"
+                        hover="/images/ru/button-download/button-hover.png"
+                        clicked="/images/ru/button-download/button-clicked.png"
+                        class="modal__button" />
+                </a>
                 <a 
                     href="https://www.apple.com/ru/itunes/download/" 
-                    @click="goItunes()" 
                     class="modal__itunes" 
                     target="_blank">
                     Скачать iTunes<br>
@@ -190,15 +206,18 @@
                 carousel: {
                     mobile: {
                         width: null,
-                        height: null
+                        height: null,
+                        space: null
                     },
                     desktop: {
                         width: null,
-                        height: null
+                        height: null,
+                        space: null
                     },
                     ringtones: {
                         width: null,
-                        height: null
+                        height: null,
+                        space: null
                     },
                     arrows: {
                         width: null,
@@ -233,8 +252,8 @@
                     '09_sovershenno_secretno',
                     '10_tantsuyte_vam_zvonyat'
                 ],
-                mobileWallpaper: 0,
-                desktopWallpaper: 0,
+                mobileWallpaper: 1,
+                desktopWallpaper: 1,
                 ringtone: 0,
                 isModalOpened: false,
                 modal: {
@@ -257,20 +276,6 @@
             handleChangeRingtoneSlider(index) {
                 this.ringtone = index
             },
-            downloadMobileWp() {
-                let a = document.createElement("a");
-                a.href = `/images/sveza_tel-0${this.desktopWallpaper}.jpg`
-                a.download = `sveza_tel-0${this.desktopWallpaper}.jpg`;
-                a.click()
-                a.remove()
-            },
-            downloadDesktopWp() {
-                let a = document.createElement("a");
-                a.href = `/images/sveza_comp-0${this.desktopWallpaper}.jpg`
-                a.download = `sveza_comp-0${this.desktopWallpaper}.jpg`;
-                a.click()
-                a.remove()
-            },
             openModal(target) {
                 this.modal[target] = true
                 this.isModalOpened = true
@@ -290,23 +295,6 @@
             playSound() {
                 const ref = 'sound' + this.ringtone
                 this.$refs[ref].play()
-            },
-            downloadMp3() {
-                let a = document.createElement("a");
-                a.href = `/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`
-                a.download = `${this.ringtones[this.ringtone]}.mp3`;
-                a.click()
-                a.remove()
-            },
-            downloadM4r() {
-                let a = document.createElement("a");
-                a.href = `/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`
-                a.download = `${this.ringtones[this.ringtone]}.m4r`;
-                a.click()
-                a.remove()
-            },
-            goItunes() {
-                window.open('https://www.apple.com/ru/itunes/download/', '_blank')
             }
         },
         mounted() {
@@ -314,15 +302,18 @@
 
             this.carousel.mobile = {
                 width: globalWidth * 0.15,
-                height: globalWidth * 0.3
+                height: globalWidth * 0.3,
+                space: globalWidth * 0.08
             }
             this.carousel.desktop = {
                 width: globalWidth * 0.25,
-                height: globalWidth * 0.15
+                height: globalWidth * 0.15,
+                space: globalWidth * 0.08
             }
             this.carousel.ringtones = {
                 width: globalWidth * 0.25,
-                height: globalWidth * 0.15
+                height: globalWidth * 0.15,
+                space: globalWidth * 0.07
             }
             this.carousel.arrows = {
                 width: globalWidth * 0.08,
@@ -400,6 +391,7 @@
         position: fixed;
         width: 100%;
         height: 100vh;
+        z-index: 1000;
         top: 0;
         bottom: 0;
         left: 0;
@@ -410,6 +402,7 @@
     .modal__item {
         display: flex;
         position: relative;
+        z-index: 1100;
     }
 
     .modal__button {
@@ -418,6 +411,7 @@
         width: 160px;
         top: 100px;
         left: 45px;
+        z-index: 1110;
     }
 
     .modal__button_withqr {
@@ -437,6 +431,22 @@
     .modal__itunes {
         position: absolute;
         top: 165px;
-        left: 45px;
+        left: 65px;
+        color: #2e358b;
+        font-size: 10px;
+        width: 22%;
+        word-wrap: break-word;
+        text-decoration: underline;
+    }
+    
+    .modal__link {
+        position: absolute;
+        top: 330px;
+        left: 65px;
+        color: #2e358b;
+        font-size: 10px;
+        width: 22%;
+        word-wrap: break-word;
+        text-decoration: underline;
     }
 </style>

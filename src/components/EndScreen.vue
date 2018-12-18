@@ -7,7 +7,8 @@
                 <Button
                     main="/images/ru/button-end/button.png" 
                     hover="/images/ru/button-end/button-hover.png" 
-                    clicked="/images/ru/button-end/button-clicked.png" />
+                    clicked="/images/ru/button-end/button-clicked.png"
+                    @mouseup.native="goToGifts()" />
             </router-link>
         </div>
         <div class="end-under" />
@@ -23,6 +24,11 @@
         components: {
             End,
             Button
+        },
+        methods: {
+            goToGifts() {
+                this.$router.push({ path: '/gifts' })
+            }
         }
     }
 </script>
@@ -31,8 +37,9 @@
     .end-under {
         z-index: 9900;
         position: absolute;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
+        top: 0;
     }
 
     .end {

@@ -20,7 +20,7 @@
 
     body {
         font-family: Freakomix;
-        background: #b0d2e3;
+        background: #9fb949;
         margin: 0;
         width: 100%;
         height: 100vh;
