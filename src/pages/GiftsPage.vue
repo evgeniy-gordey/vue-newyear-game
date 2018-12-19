@@ -228,7 +228,7 @@
         </div>
 
         <audio ref="sound0" src="/sounds/gifts/basic/01-kto-tam.mp3" />
-        <audio ref="sound1" src="/sounds/gifts/basic/02-molodoy-dyatel-na -bereze.mp3" />
+        <audio ref="sound1" src="/sounds/gifts/basic/02-molodoy-dyatel-na-bereze.mp3" />
         <audio ref="sound2" src="/sounds/gifts/basic/03-zhena-zvonit.mp3" />
         <audio ref="sound3" src="/sounds/gifts/basic/04-surpriz-za-dveryu.mp3" />
         <audio ref="sound4" src="/sounds/gifts/basic/05-prizhok-v-vodu-s-mirovim-recordom.mp3" />
