@@ -227,16 +227,16 @@
                 class="social-sharing__link" />
         </div>
 
-        <audio ref="sound0" src="/sounds/gifts/basic/01_kto_tam.mp3" />
-        <audio ref="sound1" src="/sounds/gifts/basic/02_molodoy_dyatel_na _bereze.mp3" />
-        <audio ref="sound2" src="/sounds/gifts/basic/03_zhena_zvonit.mp3" />
-        <audio ref="sound3" src="/sounds/gifts/basic/04_surpriz_za_dveryu.mp3" />
-        <audio ref="sound4" src="/sounds/gifts/basic/05_prizhok_v_vodu_s_mirovim_recordom.mp3" />
-        <audio ref="sound5" src="/sounds/gifts/basic/06_kokteyl_buratino.mp3" />
-        <audio ref="sound6" src="/sounds/gifts/basic/07_k_zime_gotovi.mp3" />
-        <audio ref="sound7" src="/sounds/gifts/basic/08_skelet_v_shkafu.mp3" />
-        <audio ref="sound8" src="/sounds/gifts/basic/09_sovershenno_secretno.mp3" />
-        <audio ref="sound9" src="/sounds/gifts/basic/10_tantsuyte_vam_zvonyat.mp3" />
+        <audio ref="sound0" src="/sounds/gifts/basic/01-kto-tam.mp3" />
+        <audio ref="sound1" src="/sounds/gifts/basic/02-molodoy-dyatel-na -bereze.mp3" />
+        <audio ref="sound2" src="/sounds/gifts/basic/03-zhena-zvonit.mp3" />
+        <audio ref="sound3" src="/sounds/gifts/basic/04-surpriz-za-dveryu.mp3" />
+        <audio ref="sound4" src="/sounds/gifts/basic/05-prizhok-v-vodu-s-mirovim-recordom.mp3" />
+        <audio ref="sound5" src="/sounds/gifts/basic/06-kokteyl-buratino.mp3" />
+        <audio ref="sound6" src="/sounds/gifts/basic/07-k-zime-gotovi.mp3" />
+        <audio ref="sound7" src="/sounds/gifts/basic/08-skelet-v-shkafu.mp3" />
+        <audio ref="sound8" src="/sounds/gifts/basic/09-sovershenno-secretno.mp3" />
+        <audio ref="sound9" src="/sounds/gifts/basic/10-tantsuyte-vam-zvonyat.mp3" />
 
     </div>
 </template>
