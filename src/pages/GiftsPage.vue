@@ -129,7 +129,7 @@
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
-                <a :href="`/images/sveza-tel-0${this.mobileWllpaper}.jpg`" target="_blank" download>
+                <a :href="`/images/sveza-tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
                     <Button 
                         :main="`/images/${lang}/button-download/button.png`"
                         :hover="`/images/${lang}/button-download/button-hover.png`"
