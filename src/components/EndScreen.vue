@@ -4,12 +4,11 @@
         <EndEn class="end" v-if="lang === 'en'" />
         <div 
             class="end-button">
-            <router-link to="/gifts" target="_blank">
+            <router-link :to="path" target="_blank">
                 <Button
                     :main="`/images/${lang}/button-end/button.png`" 
                     :hover="`/images/${lang}/button-end/button-hover.png`" 
-                    :clicked="`/images/${lang}/button-end/button-clicked.png`"
-                    @mouseup.native="goToGifts()" />
+                    :clicked="`/images/${lang}/button-end/button-clicked.png`" />
             </router-link>
         </div>
         <div class="end-under" />
@@ -29,10 +28,10 @@
             EndEn,
             Button
         },
-        computed: mapGetters(['lang']),
-        methods: {
-            goToGifts() {
-                this.$router.push({ path: '/gifts' })
+        computed: { 
+            ...mapGetters(['lang']),
+            path() {
+                return (this.lang === 'ru') ? '/ru/gifts' : '/gifts'
             }
         }
     }
