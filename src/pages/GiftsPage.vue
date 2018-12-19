@@ -107,8 +107,8 @@
                 <qr-code 
                     class="modal__qr"
                     :size="120"
-                    :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
-                <a :href="`/images/sveza_tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
+                    :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
+                <a :href="`/images/sveza-tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
                     <Button 
                         :main="`/images/${lang}/button-download/button.png`"
                         :hover="`/images/${lang}/button-download/button-hover.png`"
@@ -116,7 +116,7 @@
                         class="modal__button_withqr" />
                 </a>
                 <span class="modal__link">
-                    {{ 'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg' }}
+                    {{ 'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg' }}
                 </span>
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
@@ -128,8 +128,8 @@
                 <qr-code 
                     class="modal__qr"
                     :size="120"
-                    :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
-                <a :href="`/images/sveza_tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
+                    :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
+                <a :href="`/images/sveza-tel-0${this.mobileWllpaper}.jpg`" target="_blank" download>
                     <Button 
                         :main="`/images/${lang}/button-download/button.png`"
                         :hover="`/images/${lang}/button-download/button-hover.png`"
@@ -137,7 +137,7 @@
                         class="modal__button_withqr" />
                 </a>
                 <span class="modal__link">
-                    {{ 'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg' }}
+                    {{ 'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg' }}
                 </span>
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
@@ -146,7 +146,7 @@
                     alt=""
                     class="modal__image"
                     width="500px">
-                <a :href="`/images/sveza_comp-0${this.desktopWallpaper}.jpg`" target="_blank" download>
+                <a :href="`/images/sveza-comp-0${this.desktopWallpaper}.jpg`" target="_blank" download>
                     <Button 
                         :main="`/images/${lang}/button-download/button.png`"
                         :hover="`/images/${lang}/button-download/button-hover.png`"
@@ -275,31 +275,31 @@
                 },
                 wallpapers: {
                     mobile: [
-                        "/images/sveza_tel-01.jpg",
-                        "/images/sveza_tel-02.jpg",
-                        "/images/sveza_tel-03.jpg",
-                        "/images/sveza_tel-04.jpg",
-                        "/images/sveza_tel-05.jpg",
+                        "/images/sveza-tel-01.jpg",
+                        "/images/sveza-tel-02.jpg",
+                        "/images/sveza-tel-03.jpg",
+                        "/images/sveza-tel-04.jpg",
+                        "/images/sveza-tel-05.jpg",
                     ],
                     desktop: [
-                        "/images/sveza_comp-01.jpg",
-                        "/images/sveza_comp-02.jpg",
-                        "/images/sveza_comp-03.jpg",
-                        "/images/sveza_comp-04.jpg",
-                        "/images/sveza_comp-05.jpg",
+                        "/images/sveza-comp-01.jpg",
+                        "/images/sveza-comp-02.jpg",
+                        "/images/sveza-comp-03.jpg",
+                        "/images/sveza-comp-04.jpg",
+                        "/images/sveza-comp-05.jpg",
                     ]
                 },
                 ringtones: [
-                    '01_kto_tam',
-                    '02_molodoy_dyatel_na _bereze',
-                    '03_zhena_zvonit',
-                    '04_surpriz_za_dveryu',
-                    '05_prizhok_v_vodu_s_mirovim_recordom',
-                    '06_kokteyl_buratino',
-                    '07_k_zime_gotovi',
-                    '08_skelet_v_shkafu',
-                    '09_sovershenno_secretno',
-                    '10_tantsuyte_vam_zvonyat'
+                    '01-kto-tam',
+                    '02-molodoy-dyatel-na-bereze',
+                    '03-zhena-zvonit',
+                    '04-surpriz-za-dveryu',
+                    '05-prizhok-v-vodu-s-mirovim-recordom',
+                    '06-kokteyl-buratino',
+                    '07-k-zime-gotovi',
+                    '08-skelet-v-shkafu',
+                    '09-sovershenno-secretno',
+                    '10-tantsuyte-vam-zvonyat'
                 ],
                 mobileWallpaper: 1,
                 desktopWallpaper: 1,
