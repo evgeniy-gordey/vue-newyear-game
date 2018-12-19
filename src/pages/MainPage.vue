@@ -79,17 +79,6 @@
             next(vm => {
                 vm.$store.commit('setLang', to.matched[0].meta.lang)
             })
-        },
-        metaInfo: {
-            meta: [
-                {
-                    'property': 'og:description',
-                    'content': (window.location.href.includes('ru')) ?
-                        'Увлекательная новогодняя игра от «Свезы» с приятными подарками' : 
-                        'Fascinating New Year game by "Sveza" with nice gifts',
-                    'vmid': 'og:description'
-                }
-            ]
         }
     }
 </script>
