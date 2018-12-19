@@ -39,6 +39,9 @@
             },
             isMute: {
                 type: Boolean
+            },
+            lang: {
+                type: String
             }
         },
         data: () => {
@@ -54,10 +57,14 @@
                 return () => import(`../svg/active-elements/${this.data.name}.svg`)
             },
             tooltipLoader () {
-                return () => import(`../svg/tooltips/${this.data.name}.svg`)
+                if (this.lang) {
+                    return () => import(`../svg/${this.lang}/tooltips/${this.data.name}.svg`)
+                }
             },
             modalLoader () {
-                return () => import(`../svg/modals/${this.data.name}.svg`)
+                if (this.lang) {
+                    return () => import(`../svg/${this.lang}/modals/${this.data.name}.svg`)
+                }
             }
         },
         methods: {
@@ -72,7 +79,7 @@
                 if (!this.isMute) this.$refs[this.data.name].play()
                 this.isClicked = true
                 this.isHover = false
-                if (this.data.isCounted && !this.wasClicked) this.increaseCounter(this.data.title)
+                if (this.data.isCounted && !this.wasClicked) this.increaseCounter(this.data[`title-${this.lang}`])
                 this.wasClicked = true
             },
             closeModal () {

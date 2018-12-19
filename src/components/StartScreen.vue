@@ -1,6 +1,7 @@
 <template>
     <div class="start-screen" >
-        <Start class="start"/>
+        <StartRu class="start" v-if="lang === 'ru'" />
+        <StartEn class="start" v-if="lang === 'en'" />
         <Button 
             main="/images/ru/button-start/button.png" 
             hover="/images/ru/button-start/button-hover.png" 
@@ -12,15 +13,20 @@
 </template>
 
 <script>
-    import Start from '../svg/start.svg'
+    import { mapGetters } from 'vuex'
+
+    import StartRu from '../svg/ru/start.svg'
+    import StartEn from '../svg/en/start.svg'
     import Button from './interface/Button.vue'
 
     export default {
         name: 'StartScreen',
         components: {
-            Start,
+            StartRu,
+            StartEn,
             Button
         },
+        computed: mapGetters(['lang']),
         props: {
             triggerStart: {
                 type: Function

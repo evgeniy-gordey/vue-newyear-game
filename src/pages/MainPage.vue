@@ -75,6 +75,11 @@
                 this.$refs.background.volume = !value
             }
         },
+        beforeRouteEnter (to, from, next) {
+            next(vm => {
+                vm.$store.commit('setLang', to.matched[0].meta.lang)
+            })
+        },
     }
 </script>
 

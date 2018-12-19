@@ -55,60 +55,64 @@
             :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeRingtoneSlider" >
             <slide v-for="(slide, i) in ringtones" :index="i" :key="i">
-                <img :src="'/images/ru/ringtones/ringtone-' + i + '.png'" width="100%" alt="">
+                <img :src="`/images/${lang}/ringtones/ringtone-${i}.png`" width="100%" alt="">
             </slide>
         </carousel-3d>
 
         <Button 
-            main="/images/ru/button-android/button.png" 
-            hover="/images/ru/button-android/button-hover.png" 
-            clicked="/images/ru/button-android/button-clicked.png" 
+            :main="`/images/${lang}/button-android/button.png`"
+            :hover="`/images/${lang}/button-android/button-hover.png`"
+            :clicked="`/images/${lang}/button-android/button-clicked.png`"
             class="button button_android-wp"
             @click.native="openModal('androidWp')" />
         <Button 
-            main="/images/ru/button-iphone/button.png" 
-            hover="/images/ru/button-iphone/button-hover.png" 
-            clicked="/images/ru/button-iphone/button-clicked.png" 
+            :main="`/images/${lang}/button-iphone/button.png`"
+            :hover="`/images/${lang}/button-iphone/button-hover.png`"
+            :clicked="`/images/${lang}/button-iphone/button-clicked.png`"
             class="button button_iphone-wp"
             @click.native="openModal('iphoneWp')" />
         <Button 
-            main="/images/ru/button-download/button.png" 
-            hover="/images/ru/button-download/button-hover.png" 
-            clicked="/images/ru/button-download/button-clicked.png" 
+            :main="`/images/${lang}/button-download/button.png`"
+            :hover="`/images/${lang}/button-download/button-hover.png`"
+            :clicked="`/images/${lang}/button-download/button-clicked.png`"
             class="button button_desktop"
             @click.native="openModal('desktopWp')" />
         <Button 
-            main="/images/button-hear/button.png" 
+            :main="`/images/button-hear/button.png`"
             hover="/images/button-hear/button-hover.png" 
             clicked="/images/button-hear/button-clicked.png" 
             class="button_hear"
             @click.native="playSound()" />
         <Button 
-            main="/images/ru/button-android/button.png" 
-            hover="/images/ru/button-android/button-hover.png" 
-            clicked="/images/ru/button-android/button-clicked.png" 
+            :main="`/images/${lang}/button-android/button.png`"
+            :hover="`/images/${lang}/button-android/button-hover.png`"
+            :clicked="`/images/${lang}/button-android/button-clicked.png`"
             class="button button_android-ringtone"
             @click.native="openModal('androidRingtone')" />
         <Button 
-            main="/images/ru/button-iphone/button.png" 
-            hover="/images/ru/button-iphone/button-hover.png" 
-            clicked="/images/ru/button-iphone/button-clicked.png" 
+            :main="`/images/${lang}/button-iphone/button.png`"
+            :hover="`/images/${lang}/button-iphone/button-hover.png`"
+            :clicked="`/images/${lang}/button-iphone/button-clicked.png`"
             class="button button_iphone-ringtone"
             @click.native="openModal('iphoneRingtone')" />
         
 
         <div class="modal" v-if="isModalOpened" @click.self.prevent="closeModal()">
             <div class="modal__item modal__item_android-wp" v-if="modal.androidWp" >
-                <img src="/images/ru/modals/android-wp.png" alt="">
+                <img 
+                    :src="`/images/${lang}/modals/android-wp.png`"
+                    alt=""
+                    class="modal__image"
+                    width="500px">
                 <qr-code 
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
                 <a :href="`/images/sveza_tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
                     <Button 
-                        main="/images/ru/button-download/button.png" 
-                        hover="/images/ru/button-download/button-hover.png" 
-                        clicked="/images/ru/button-download/button-clicked.png" 
+                        :main="`/images/${lang}/button-download/button.png`"
+                        :hover="`/images/${lang}/button-download/button-hover.png`"
+                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
                         class="modal__button_withqr" />
                 </a>
                 <span class="modal__link">
@@ -116,16 +120,20 @@
                 </span>
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
-                <img src="/images/ru/modals/iphone-wp.png" alt="">
+                <img 
+                    :src="`/images/${lang}/modals/iphone-wp.png`" 
+                    alt=""
+                    class="modal__image"
+                    width="500px">
                 <qr-code 
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza_tel-0' + mobileWallpaper + '.jpg'" />
                 <a :href="`/images/sveza_tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
                     <Button 
-                        main="/images/ru/button-download/button.png" 
-                        hover="/images/ru/button-download/button-hover.png" 
-                        clicked="/images/ru/button-download/button-clicked.png" 
+                        :main="`/images/${lang}/button-download/button.png`"
+                        :hover="`/images/${lang}/button-download/button-hover.png`"
+                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
                         class="modal__button_withqr" />
                 </a>
                 <span class="modal__link">
@@ -133,26 +141,34 @@
                 </span>
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
-                <img src="/images/ru/modals/desktop-wp.png" alt="">
+                <img 
+                    :src="`/images/${lang}/modals/desktop-wp.png`" 
+                    alt=""
+                    class="modal__image"
+                    width="500px">
                 <a :href="`/images/sveza_comp-0${this.desktopWallpaper}.jpg`" target="_blank" download>
                     <Button 
-                        main="/images/ru/button-download/button.png" 
-                        hover="/images/ru/button-download/button-hover.png" 
-                        clicked="/images/ru/button-download/button-clicked.png" 
+                        :main="`/images/${lang}/button-download/button.png`"
+                        :hover="`/images/${lang}/button-download/button-hover.png`"
+                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
                         class="modal__button" />
                 </a>
             </div>
             <div class="modal__item modal__item_android-ringtone" v-if="modal.androidRingtone" >
-                <img src="/images/ru/modals/android-ringtone.png" alt="">
+                <img 
+                    :src="`/images/${lang}/modals/android-ringtone.png`" 
+                    alt=""
+                    class="modal__image"
+                    width="500px">
                 <qr-code 
                     class="modal__qr"
                     :size="120"
                     :text="'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3'" />
                 <a :href="`/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`" target="_blank" download>
                     <Button 
-                        main="/images/ru/button-download/button.png"
-                        hover="/images/ru/button-download/button-hover.png"
-                        clicked="/images/ru/button-download/button-clicked.png"
+                        :main="`/images/${lang}/button-download/button.png`"
+                        :hover="`/images/${lang}/button-download/button-hover.png`"
+                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
                         class="modal__button_withqr" />
                 </a>
                 <span class="modal__link">
@@ -160,12 +176,16 @@
                 </span>
             </div>
             <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
-                <img src="/images/ru/modals/iphone-ringtone.png" alt="">
+                <img 
+                    :src="`/images/${lang}/modals/iphone-ringtone.png`" 
+                    alt=""
+                    class="modal__image"
+                    width="500px">
                 <a :href="`/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`" target="_blank" download>
                     <Button 
-                        main="/images/ru/button-download/button.png"
-                        hover="/images/ru/button-download/button-hover.png"
-                        clicked="/images/ru/button-download/button-clicked.png"
+                        :main="`/images/${lang}/button-download/button.png`"
+                        :hover="`/images/${lang}/button-download/button-hover.png`"
+                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
                         class="modal__button" />
                 </a>
                 <a 
@@ -176,6 +196,35 @@
                     для Windows
                 </a>
             </div>
+        </div>
+
+        <div class="social-sharing">
+            <a 
+                href="https://vk.com/share.php?url=http%3A%2F%2Fsveza-new-year.com&title=Happy%20Wood%20Year&description=Увлекательная%20новогодняя%20игра%20от%20«Свезы»%20с%20приятными%20подарками&noparse=true" 
+                target="_blank" 
+                class="">
+                <Button 
+                    main="/images/button-vk/button.png"
+                    hover="/images/button-vk/button-hover.png"
+                    clicked="/images/button-vk/button-clicked.png"
+                    class="social-sharing__vk" />
+            </a>
+            <a 
+                href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsveza-new-year.com&title=Happy%20Wood%20Year&description=Увлекательная%20новогодняя%20игра%20от%20«Свезы»%20с%20приятными%20подарками" 
+                target="_blank" 
+                class="">
+                <Button 
+                    main="/images/button-facebook/button.png"
+                    hover="/images/button-facebook/button-hover.png"
+                    clicked="/images/button-facebook/button-clicked.png"
+                    class="social-sharing__fb" />
+            </a>
+            <Button 
+                :main="`/images/${lang}/button-link/button.png`"
+                :hover="`/images/${lang}/button-link/button-hover.png`"
+                :clicked="`/images/${lang}/button-link/button-clicked.png`"
+                @click.native="copyUrl()"
+                class="social-sharing__link" />
         </div>
 
         <audio ref="sound0" src="/sounds/gifts/basic/01_kto_tam.mp3" />
@@ -295,6 +344,14 @@
             playSound() {
                 const ref = 'sound' + this.ringtone
                 this.$refs[ref].play()
+            },
+            copyUrl() {
+                const el = document.createElement('textarea');
+                el.value = window.location.href;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
             }
         },
         mounted() {
@@ -319,7 +376,12 @@
                 width: globalWidth * 0.08,
                 height: globalWidth * 0.05
             }
-        }
+        },
+        beforeRouteEnter (to, from, next) {
+            next(vm => {
+                vm.$store.commit('setLang', to.matched[0].meta.lang)
+            })
+        },
     }
 </script>
 
@@ -399,6 +461,17 @@
         background: rgba(0, 0, 0, .75)
     }
 
+    @media (max-width: 1000px) and (min-aspect-ratio: 1/1) {
+        .modal {
+            align-items: flex-start;
+            overflow: scroll;
+        }
+    }
+
+    .modal__image {
+        align-self: center;
+    }
+
     .modal__item {
         display: flex;
         position: relative;
@@ -417,21 +490,21 @@
     .modal__button_withqr {
         position: absolute;
         cursor: pointer;
-        width: 160px;
-        top: 280px;
-        left: 45px;
+        width: 27%;
+        top: 40%;
+        left: 10%;
     }
 
     .modal__qr {
         position: absolute;
-        top: 122px;
-        left: 62px;
+        top: 15%;
+        left: 11%;
     }
 
     .modal__itunes {
         position: absolute;
-        top: 165px;
-        left: 65px;
+        top: 24%;
+        left: 14%;
         color: #2e358b;
         font-size: 10px;
         width: 22%;
@@ -441,12 +514,32 @@
     
     .modal__link {
         position: absolute;
-        top: 330px;
-        left: 65px;
+        top: 49%;
+        left: 13%;
         color: #2e358b;
         font-size: 10px;
         width: 22%;
         word-wrap: break-word;
-        text-decoration: underline;
+    }
+
+    .social-sharing__vk {
+        position: absolute;   
+        width: 4%;
+        top: 97%;
+        left: 46.5%;
+    }
+
+    .social-sharing__fb {
+        position: absolute;   
+        width: 4%;
+        top: 97%;
+        left: 41%;
+    }
+
+    .social-sharing__link {
+        position: absolute;   
+        width: 18%;
+        top: 97%;
+        left: 52%;
     }
 </style>

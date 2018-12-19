@@ -26,6 +26,10 @@
         height: 100vh;
     }
 
+    body.modal-opened {
+        overflow: hidden
+    }
+
     .app {
         width: 100%;
         position: relative;

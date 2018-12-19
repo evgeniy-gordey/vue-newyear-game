@@ -50,7 +50,8 @@
     },
     {
         "name": "ship",
-        "title": "Изоляция танкера",
+        "title-ru": "Изоляция танкера",
+        "title-en": "Gas tanker insulation",
         "isCounted": true,
         "top": "52.16%",
         "left": "5.77%",
@@ -152,9 +153,9 @@
         "left": "37.78%",
         "zIndex": 240,
         "modal": {
-            "width": "12.2%",
-            "marginTop": "-8%",
-            "marginLeft": "-3%"
+            "width": "14.5%",
+            "marginTop": "-12.5%",
+            "marginLeft": "-4%"
         },
         "tooltip": {
             "marginTop": "-8%",
@@ -196,7 +197,8 @@
     {
         "name": "formwork",
         "isCounted": true,
-        "title": "Опалубка",
+        "title-ru": "Опалубка",
+        "title-en": "Shuttering",
         "top": "76.5%",
         "left": "8.12%",
         "zIndex": 240,
@@ -213,7 +215,8 @@
     {
         "name": "bed",
         "isCounted": true,
-        "title": "Детская кровать",
+        "title-ru": "Детская кровать",
+        "title-en": "Kid`s bed",
         "top": "49.44%",
         "left": "23.61%",
         "zIndex": 240,
@@ -230,7 +233,8 @@
     {
         "name": "bedroom-floor",
         "isCounted": true,
-        "title": "Основа паркета",
+        "title-ru": "Основа паркета",
+        "title-en": "Engineered",
         "top": "61.10%",
         "left": "28.60%",
         "zIndex": 240,
@@ -247,7 +251,8 @@
     {
         "name": "chest",
         "isCounted": true,
-        "title": "Бокс для музыкальных инструментов",
+        "title-ru": "Бокс для музыкальных инструментов",
+        "title-en": "Box formusical instruments",
         "top": "55.15%",
         "left": "33.45%",
         "zIndex": 240,
@@ -264,7 +269,8 @@
     {
         "name": "locker",
         "isCounted": true,
-        "title": "Фасад шкафа",
+        "title-ru": "Фасад шкафа",
+        "title-en": "Wardrobe frame",
         "top": "51%",
         "left": "43.71%",
         "zIndex": 240,
@@ -281,7 +287,8 @@
     {
         "name": "horse",
         "isCounted": true,
-        "title": "Детские игрушки",
+        "title-ru": "Детские игрушки",
+        "title-en": "Kids` toys",
         "top": "85.6%",
         "left": "30.49%",
         "zIndex": 240,
@@ -298,7 +305,8 @@
     {
         "name": "gorka",
         "isCounted": true,
-        "title": "Детская площадка",
+        "title-ru": "Детская площадка",
+        "title-en": "Kids` playground",
         "top": "81.56%",
         "left": "45.22%",
         "zIndex": 240,
@@ -315,7 +323,8 @@
     {
         "name": "nightstand",
         "isCounted": true,
-        "title": "Мебельный ящик",
+        "title-ru": "Мебельный ящик",
+        "title-en": "Drawer",
         "top": "50.8%",
         "left": "59.3%",
         "zIndex": 240,
@@ -332,7 +341,8 @@
     {
         "name": "boat",
         "isCounted": true,
-        "title": "Пол и сиденья для лодки",
+        "title-ru": "Пол и сиденья для лодки",
+        "title-en": "Boat floor and seats",
         "top": "67.07%",
         "left": "62.55%",
         "zIndex": 240,
@@ -349,7 +359,8 @@
     {
         "name": "molbert",
         "isCounted": true,
-        "title": "Печатный штамп",
+        "title-ru": "Печатный штамп",
+        "title-en": "Die-cutting stamp",
         "top": "53.14%",
         "left": "65.8%",
         "zIndex": 240,
@@ -366,24 +377,26 @@
     {
         "name": "window",
         "isCounted": true,
-        "title": "Отделка стен",
+        "title-ru": "Отделка стен",
+        "title-en": "Wall covering",
         "top": "44%",
-        "left": "38.4%",
+        "left": "74.36%",
         "zIndex": 240,
         "modal": {
-            "width": "15.2%",
-            "marginTop": "-9.2%",
-            "marginLeft": "31%"
+            "width": "12.2%",
+            "marginTop": "-7%",
+            "marginLeft": "-3%"
         },
         "tooltip": {
-            "marginTop": "-5%",
-            "marginLeft": "32%"
+            "marginTop": "-4%",
+            "marginLeft": "-2%"
         }
     },
     {
         "name": "car-floor",
         "isCounted": true,
-        "title": "Пол в фургоне",
+        "title-ru": "Пол в фургоне",
+        "title-en": "Van flooring",
         "top": "82.8%",
         "left": "66.1%",
         "zIndex": 240,
@@ -400,7 +413,8 @@
     {
         "name": "car-boxes",
         "isCounted": true,
-        "title": "Упаковка",
+        "title-ru": "Упаковка",
+        "title-en": "Packaging",
         "top": "73.4%",
         "left": "72.2%",
         "zIndex": 240,
@@ -417,7 +431,8 @@
     {
         "name": "pricep",
         "isCounted": true,
-        "title": "Трейлер для перевозки животных",
+        "title-ru": "Трейлер для перевозки животных",
+        "title-en": "Animal carrier trailer",
         "top": "78.74%",
         "left": "84.76%",
         "zIndex": 240,

@@ -5,12 +5,14 @@
             :key="element.name"
             :increaseCounter="increaseCounter"
             :data="element"
-            :isMute="isMute" />
+            :isMute="isMute"
+            :lang="lang" />
     </div>
 </template>
 
 <script>
     import ActiveElementsItem from './ActiveElementsItem.vue'
+    import { mapGetters } from 'vuex'
 
     export default {
         name: 'ActiveElements',
@@ -28,7 +30,8 @@
             isMute: {
                 type: Boolean
             }
-        }
+        },
+        computed: mapGetters(['lang'])
     }
 </script>
 

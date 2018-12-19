@@ -1,13 +1,14 @@
 <template>
     <div class="end-screen" >
-        <End class="end"/>
+        <EndRu class="end" v-if="lang === 'ru'" />
+        <EndEn class="end" v-if="lang === 'en'" />
         <div 
             class="end-button">
             <router-link to="/gifts" target="_blank">
                 <Button
-                    main="/images/ru/button-end/button.png" 
-                    hover="/images/ru/button-end/button-hover.png" 
-                    clicked="/images/ru/button-end/button-clicked.png"
+                    :main="`/images/${lang}/button-end/button.png`" 
+                    :hover="`/images/${lang}/button-end/button-hover.png`" 
+                    :clicked="`/images/${lang}/button-end/button-clicked.png`"
                     @mouseup.native="goToGifts()" />
             </router-link>
         </div>
@@ -16,15 +17,19 @@
 </template>
 
 <script>
-    import End from '../svg/end.svg'
+    import { mapGetters } from 'vuex'
+    import EndRu from '../svg/ru/end.svg'
+    import EndEn from '../svg/en/end.svg'
     import Button from './interface/Button.vue'
 
     export default {
         name: 'endScreen',
         components: {
-            End,
+            EndRu,
+            EndEn,
             Button
         },
+        computed: mapGetters(['lang']),
         methods: {
             goToGifts() {
                 this.$router.push({ path: '/gifts' })
