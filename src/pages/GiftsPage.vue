@@ -17,7 +17,7 @@
             :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeMobileSlider" >
             <slide v-for="(slide, i) in wallpapers.mobile" :index="i" :key="i">
-                <img :src="slide" width="100%" alt="">
+                <img :src="`/images/gallery/mobile-${i + 1}.jpg`" width="100%" alt="">
             </slide>
         </carousel-3d>
 
@@ -36,7 +36,7 @@
             :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeDesktopSlider" >
             <slide v-for="(slide, i) in wallpapers.desktop" :index="i" :key="i">
-                <img :src="slide" width="100%" alt="">
+                <img :src="`/images/gallery/desktop-${i + 1}.jpg`" width="100%" alt="">
             </slide>
         </carousel-3d>
 
