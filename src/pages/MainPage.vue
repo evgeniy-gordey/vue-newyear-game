@@ -17,8 +17,7 @@
                 v-if="!isStarted"
                 :triggerStart="handleStartGame" />
             <EndScreen 
-                v-if="isEnded" 
-                class="app__end-screen" />
+                v-if="isEnded" />
             <MuteSound />
             <audio ref="background" src="/sounds/background.mp3" loop />
         </div>
@@ -28,13 +27,13 @@
 <script>
     import { mapGetters, mapMutations } from 'vuex'
 
-    import ActiveElements from '../components/ActiveElements.vue'
-    import StaticElements from '../components/StaticElements.vue'
-    import AnimatedElements from '../components/AnimatedElements.vue'
-    import StartScreen from '../components/StartScreen.vue'
-    import EndScreen from '../components/EndScreen.vue'
-    import Counter from '../components/interface/Counter.vue'
-    import MuteSound from '../components/interface/MuteSound.vue'
+    import ActiveElements from '@/components/main/ActiveElements.vue'
+    import StaticElements from '@/components/main/StaticElements.vue'
+    import AnimatedElements from '@/components/main/AnimatedElements.vue'
+    import StartScreen from '@/components/main/StartScreen.vue'
+    import EndScreen from '@/components/main/EndScreen.vue'
+    import Counter from '@/components/interface/Counter.vue'
+    import MuteSound from '@/components/interface/MuteSound.vue'
 
     export default {
         name: 'MainPage',
@@ -83,7 +82,7 @@
     }
 </script>
 
-<style lang="css">
+<style lang="scss">
     .main {
         width: 100%;
         height: 100vh;
@@ -92,40 +91,36 @@
         position: relative;
         overflow-x: hidden;
         justify-content: center;
-    }
 
-    .main__wrapper {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        flex: 0 0 auto;
-    }
-
-    .main__background-top {
-        position: absolute;
-        top: 0;
-        height: 50vh;
-        width: 100%;
-        background: #1e3e4f;
-    }
-
-    .main__background-bottom {
-        position: absolute;
-        top: 50%;
-        height: 50vh;
-        width: 100%;
-        background: #b0d2e3;
-    }
-
-    @media (min-aspect-ratio: 16/9) {
-        .main {
+        @media (min-aspect-ratio: 16/9) {
             justify-content: flex-start;
         }
-    }
 
-    @media (max-aspect-ratio: 16/9) {
-        .main {
+        @media (max-aspect-ratio: 16/9) {
             overflow: hidden;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            flex: 0 0 auto;
+        }
+
+        &__background-top {
+            position: absolute;
+            top: 0;
+            height: 50vh;
+            width: 100%;
+            background: #1e3e4f;
+        }
+
+        &__background-bottom {
+            position: absolute;
+            top: 50%;
+            height: 50vh;
+            width: 100%;
+            background: #b0d2e3;
         }
     }
 </style>

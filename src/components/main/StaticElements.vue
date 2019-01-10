@@ -11,13 +11,13 @@
 </template>
 
 <script>
-    import SantaWithDeers from '../svg/santa-with-deers.svg' 
-    import Background from '../svg/background.svg'
-    import House from '../svg/house.svg' 
-    import Front from '../svg/front.svg' 
-    import Moon from '../svg/moon.svg' 
-    import Logo from '../svg/logo.svg' 
-    import Stars from '../svg/stars.svg' 
+    import SantaWithDeers from '@/svg/santa-with-deers.svg' 
+    import Background from '@/svg/background.svg'
+    import House from '@/svg/house.svg' 
+    import Front from '@/svg/front.svg' 
+    import Moon from '@/svg/moon.svg' 
+    import Logo from '@/svg/logo.svg' 
+    import Stars from '@/svg/stars.svg' 
 
     export default {
         name: 'StaticElements',

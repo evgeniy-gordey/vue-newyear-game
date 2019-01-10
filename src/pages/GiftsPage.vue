@@ -5,7 +5,7 @@
         <!-- Carousel for mobile wallpapers -->
         <carousel-3d 
             v-if="carousel.mobile.width"
-            class="carousel"
+            class="carousel1"
             :width="carousel.mobile.width"
             :height="carousel.mobile.height"
             :space="carousel.mobile.space"
@@ -386,7 +386,7 @@
 </script>
 
 <style lang="css" scoped>
-    .carousel {
+    .carousel1 {
         position: absolute !important;
         top: 35% !important;
         width: 50% !important;

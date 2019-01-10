@@ -15,9 +15,9 @@
 <script>
     import { mapGetters } from 'vuex'
 
-    import StartRu from '../svg/ru/start.svg'
-    import StartEn from '../svg/en/start.svg'
-    import Button from './interface/Button.vue'
+    import StartRu from '@/svg/ru/start.svg'
+    import StartEn from '@/svg/en/start.svg'
+    import Button from '@/components/interface/Button.vue'
 
     export default {
         name: 'StartScreen',

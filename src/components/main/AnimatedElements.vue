@@ -14,8 +14,8 @@
 
 <script>
     import Snow from 'vue-niege';
-    import CloudSmall from '../svg/cloud-small.svg'
-    import CloudBig from '../svg/cloud-big.svg'
+    import CloudSmall from '@/svg/cloud-small.svg'
+    import CloudBig from '@/svg/cloud-big.svg'
 
     export default {
         name: 'AnimatedElements',

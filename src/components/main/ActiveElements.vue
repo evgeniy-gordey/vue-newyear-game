@@ -1,5 +1,5 @@
  <template>
-    <div class="active-elements">
+    <div class="active-elements" v-if="lang">
         <ActiveElementsItem
             v-for="element in elementsList" 
             :key="element.name"
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import ActiveElementsItem from './ActiveElementsItem.vue'
+    import ActiveElementsItem from '@/components/main/ActiveElementsItem.vue'
     import { mapGetters } from 'vuex'
 
     export default {
@@ -25,16 +25,14 @@
                 default: () => []
             },
             increaseCounter: {
-                type: Function
+                type: Function,
+                required: true
             },
             isMute: {
-                type: Boolean
+                type: Boolean,
+                default: true
             }
         },
         computed: mapGetters(['lang'])
     }
 </script>
-
-<style lang="css" scoped>
-    
-</style>

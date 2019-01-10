@@ -1,5 +1,5 @@
 <template>
-    <div class="end-screen" >
+    <div class="end-screen">
         <EndRu class="end" v-if="lang === 'ru'" />
         <EndEn class="end" v-if="lang === 'en'" />
         <div 
@@ -17,9 +17,9 @@
 
 <script>
     import { mapGetters } from 'vuex'
-    import EndRu from '../svg/ru/end.svg'
-    import EndEn from '../svg/en/end.svg'
-    import Button from './interface/Button.vue'
+    import EndRu from '@/svg/ru/end.svg'
+    import EndEn from '@/svg/en/end.svg'
+    import Button from '@/components/interface/Button.vue'
 
     export default {
         name: 'endScreen',

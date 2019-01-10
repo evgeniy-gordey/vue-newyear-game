@@ -32,16 +32,20 @@
         name: 'ActiveElementsItem',
         props: {
             data: {
-                type: Object
+                type: Object,
+                required: true
             },
             increaseCounter: {
-                type: Function
+                type: Function,
+                required: true
             },
             isMute: {
-                type: Boolean
+                type: Boolean,
+                default: true
             },
             lang: {
-                type: String
+                type: String,
+                required: true
             }
         },
         data: () => {
@@ -54,17 +58,13 @@
         },
         computed: {
             componentLoader () { 
-                return () => import(`../svg/active-elements/${this.data.name}.svg`)
+                return () => import(`@/svg/active-elements/${this.data.name}.svg`)
             },
             tooltipLoader () {
-                if (this.lang) {
-                    return () => import(`../svg/${this.lang}/tooltips/${this.data.name}.svg`)
-                }
+                return this.lang ? () => import(`@/svg/${this.lang}/tooltips/${this.data.name}.svg`) : false
             },
             modalLoader () {
-                if (this.lang) {
-                    return () => import(`../svg/${this.lang}/modals/${this.data.name}.svg`)
-                }
+                return this.lang ? () => import(`@/svg/${this.lang}/modals/${this.data.name}.svg`) : false
             }
         },
         methods: {

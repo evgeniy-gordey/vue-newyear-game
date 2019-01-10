@@ -24,21 +24,21 @@
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .mute-sound {
         position: absolute;
         top: 5%;
         right: 11%;
         width: 2%;
         z-index: 300;
-    }
 
-    .mute-sound svg {
-        position: absolute;
-        cursor: pointer;
-    }
+        & svg {
+            position: absolute;
+            cursor: pointer;
+        }
 
-    .mute-sound_active path {
-        fill: #fff;
+        &_active path {
+            fill: #fff;
+        }
     }
 </style>
