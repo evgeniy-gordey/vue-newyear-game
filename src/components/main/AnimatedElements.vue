@@ -27,7 +27,7 @@
     }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
     .cloud-small {
         position: absolute;
         width: 100%;

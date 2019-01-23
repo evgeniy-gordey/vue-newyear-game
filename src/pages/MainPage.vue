@@ -5,12 +5,11 @@
         <div class="main__wrapper">
             <StaticElements />
             <ActiveElements 
-                :elementsList="elementsList" 
-                :increaseCounter="addFoundedElement" 
-                :isMute="isMute" />
+                :allElements="allElements" 
+                :increaseCounter="addFoundElement"  />
             <AnimatedElements v-if="isStarted" />
             <Counter 
-                :foundedElements="foundedElements"
+                :foundElements="foundElements"
                 :currentCount="currentCount"
                 :maxCount="maxCount" />
             <StartScreen 
@@ -48,13 +47,13 @@
         },
         computed: {
             ...mapGetters([
-                'lang', 'isMute', 'isStarted', 'elementsList', 'foundedElements' 
+                'isMuted', 'isStarted', 'allElements', 'foundElements' 
             ]),
             currentCount() {
-                return this.foundedElements.length
+                return this.foundElements.length
             },
             maxCount() {
-                return this.elementsList.filter(item => item.isCounted).length
+                return this.allElements.filter(item => item.isCounted).length
             },
             isEnded() {
                 return this.currentCount === this.maxCount
@@ -62,7 +61,7 @@
         },
         methods: {
             ...mapMutations([
-                'startGame', 'addFoundedElement'
+                'startGame', 'addFoundElement'
             ]),
             handleStartGame() {
                 this.startGame()
@@ -70,14 +69,9 @@
             }
         },
         watch: {
-            isMute(value) {
+            isMuted(value) {
                 this.$refs.background.volume = !value
             }
-        },
-        beforeRouteEnter (to, from, next) {
-            next(vm => {
-                vm.$store.commit('setLang', to.matched[0].meta.lang)
-            })
         }
     }
 </script>

@@ -1,14 +1,10 @@
 <template>
     <div class="end-screen">
-        <EndRu class="end" v-if="lang === 'ru'" />
-        <EndEn class="end" v-if="lang === 'en'" />
-        <div 
-            class="end-button">
+        <EndRu class="end" v-if="$lang === 'ru'" />
+        <EndEn class="end" v-if="$lang === 'en'" />
+        <div class="end-button">
             <router-link :to="path" target="_blank">
-                <Button
-                    :main="`/images/${lang}/button-end/button.png`" 
-                    :hover="`/images/${lang}/button-end/button-hover.png`" 
-                    :clicked="`/images/${lang}/button-end/button-clicked.png`" />
+                <Button name="button-end" hasText />
             </router-link>
         </div>
         <div class="end-under" />
@@ -16,7 +12,6 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
     import EndRu from '@/svg/ru/end.svg'
     import EndEn from '@/svg/en/end.svg'
     import Button from '@/components/interface/Button.vue'
@@ -29,15 +24,14 @@
             Button
         },
         computed: { 
-            ...mapGetters(['lang']),
             path() {
-                return (this.lang === 'ru') ? '/ru/gifts' : '/gifts'
+                return (this.$lang === 'ru') ? '/ru/gifts' : '/gifts'
             }
         }
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .end-under {
         z-index: 9900;
         position: absolute;

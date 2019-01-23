@@ -1,18 +1,15 @@
 <template>
     <div class="counter">
-        <span 
-            :style="{ fontSize: counterFontSize + 'px', lineHeight: counterFontSize * 1.4 + 'px' }">
+        <span :style="{ fontSize: counterFontSize + 'px', lineHeight: counterFontSize * 1.4 + 'px' }">
             {{ currentCount }} / {{ maxCount }}
         </span>
         <ul>
             <li 
-                v-for="element in foundedElements" 
+                v-for="element in foundElements" 
                 :key="element"
                 :style="{ fontSize: spanFontSize + 'px', lineHeight: spanFontSize * 1.4 + 'px' }">
-                <i class="counter__check">&#10003; </i>
-                <span >
-                    {{ element }}
-                </span>
+                <i class="counter__check">&#10003;</i>
+                <span>{{ element }}</span>
             </li>
         </ul>
     </div>
@@ -30,7 +27,7 @@
                 type: Number,
                 default: 0
             },
-            foundedElements: {
+            foundElements: {
                 type: Array,
                 default: () => []
             }
@@ -49,7 +46,7 @@
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .counter {
         position: absolute;
         color: #fff;
@@ -58,15 +55,15 @@
         top: 5%;
         left: 3.5%;
         z-index: 300;
-    }
 
-    .counter ul {
-        padding: 0;
-        list-style: none;
-        font-size: 10px;
-    }
-    
-    .counter__check {
-        color: green;
+        &__check {
+            color: green;
+        }
+
+        & ul {
+            padding: 0;
+            list-style: none;
+            font-size: 10px;
+        }
     }
 </style>

@@ -5,37 +5,35 @@ import elements from './elements.json'
 
 Vue.use(Vuex)
 
-const store = () => (
-  new Vuex.Store({
-    state: {
-      lang: null,
-      isMute: false,
-      isStarted: false,
-      elementsList: elements,
-      foundedElements: []
+const store = new Vuex.Store({
+  state: {
+    lang: null,
+    isMuted: false,
+    isStarted: false,
+    allElements: elements,
+    foundElements: []
+  },
+  mutations: {
+    setLang(state, lang) {
+      state.lang = lang
     },
-    mutations: {
-      setLang(state, lang) {
-        state.lang = lang
-      },
-      triggerIsMute(state) {
-        state.isMute = !state.isMute
-      },
-      addFoundedElement(state, name) {
-        state.foundedElements = [ ...state.foundedElements, name ]
-      },
-      startGame(state) {
-        state.isStarted = true
-      }
+    triggerisMuted(state) {
+      state.isMuted = !state.isMuted
     },
-    getters: {
-      lang: state => state.lang,
-      isMute: state => state.isMute,
-      isStarted: state => state.isStarted,
-      elementsList: state => state.elementsList,
-      foundedElements: state => state.foundedElements,
+    addFoundElement(state, name) {
+      state.foundElements = [ ...state.foundElements, name ]
+    },
+    startGame(state) {
+      state.isStarted = true
     }
-  })
-)
+  },
+  getters: {
+    lang: state => state.lang,
+    isMuted: state => state.isMuted,
+    isStarted: state => state.isStarted,
+    allElements: state => state.allElements,
+    foundElements: state => state.foundElements,
+  }
+})
 
 export default store

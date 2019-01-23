@@ -28,6 +28,8 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
+
     export default {
         name: 'ActiveElementsItem',
         props: {
@@ -37,14 +39,6 @@
             },
             increaseCounter: {
                 type: Function,
-                required: true
-            },
-            isMute: {
-                type: Boolean,
-                default: true
-            },
-            lang: {
-                type: String,
                 required: true
             }
         },
@@ -57,29 +51,30 @@
             }
         },
         computed: {
+            ...mapGetters(['isMuted']),
             componentLoader () { 
                 return () => import(`@/svg/active-elements/${this.data.name}.svg`)
             },
             tooltipLoader () {
-                return this.lang ? () => import(`@/svg/${this.lang}/tooltips/${this.data.name}.svg`) : false
+                return () => import(`@/svg/${this.$lang}/tooltips/${this.data.name}.svg`)
             },
             modalLoader () {
-                return this.lang ? () => import(`@/svg/${this.lang}/modals/${this.data.name}.svg`) : false
+                return () => import(`@/svg/${this.$lang}/modals/${this.data.name}.svg`)
             }
         },
         methods: {
             mouseEnterHandler () {
                 this.isHover = true
-                if (!this.isMute) this.$refs.hoverSound.play()
+                if (!this.isMuted) this.$refs.hoverSound.play()
             },
             mouseLeaveHandler () {
                 this.isHover = false
             },
             openModal () {
-                if (!this.isMute) this.$refs[this.data.name].play()
+                if (!this.isMuted) this.$refs[this.data.name].play()
                 this.isClicked = true
                 this.isHover = false
-                if (this.data.isCounted && !this.wasClicked) this.increaseCounter(this.data[`title-${this.lang}`])
+                if (this.data.isCounted && !this.wasClicked) this.increaseCounter(this.data[`title-${this.$lang}`])
                 this.wasClicked = true
             },
             closeModal () {
@@ -87,7 +82,7 @@
             }
         },
         watch: {
-            isMute(value) {
+            isMuted(value) {
                 this.$refs[this.data.name].volume = !value
             }
         },
@@ -104,7 +99,7 @@
     }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
     .active-element__svg {
         position: absolute;
         pointer-events: none;

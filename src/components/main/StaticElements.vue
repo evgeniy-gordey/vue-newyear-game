@@ -33,7 +33,7 @@
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .static-elements {
         display: grid;
     }

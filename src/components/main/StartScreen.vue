@@ -1,20 +1,17 @@
 <template>
     <div class="start-screen" >
-        <StartRu class="start" v-if="lang === 'ru'" />
-        <StartEn class="start" v-if="lang === 'en'" />
+        <StartRu class="start" v-if="$lang === 'ru'" />
+        <StartEn class="start" v-if="$lang === 'en'" />
         <Button 
-            :main="`/images/${lang}/button-start/button.png`"
-            :hover="`/images/${lang}/button-start/button-hover.png`"
-            :clicked="`/images/${lang}/button-start/button-clicked.png`"
+            class="start-button"
             @click.native="triggerStart()"
-            class="start-button" />
+            name="button-start"
+            hasText />
         <div class="start-under" />
     </div>
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
-
     import StartRu from '@/svg/ru/start.svg'
     import StartEn from '@/svg/en/start.svg'
     import Button from '@/components/interface/Button.vue'
@@ -26,7 +23,6 @@
             StartEn,
             Button
         },
-        computed: mapGetters(['lang']),
         props: {
             triggerStart: {
                 type: Function
@@ -35,7 +31,7 @@
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .start-under {
         z-index: 9900;
         position: absolute;

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueYandexMetrika from 'vue-yandex-metrika' 
 
+import store from '@/store'
+
 import MainPage from '../pages/MainPage.vue'
 import GiftsPage from '../pages/GiftsPage.vue'
 
@@ -36,6 +38,18 @@ const router = new VueRouter({
   scrollBehavior () { return {x: 0, y: 0} },
   mode: 'history',
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  store.commit('setLang', to.matched[0].meta.lang)
+  Vue.mixin({
+    computed: {
+      $lang() {
+        return to.matched[0].meta.lang || 'en'
+      }
+    }
+  })
+  next()
 })
 
 Vue.use(VueYandexMetrika, {

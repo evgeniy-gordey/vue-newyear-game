@@ -1,6 +1,6 @@
 <template>
     <div class="gifts">
-        <img :src="'/images/' + lang + '/landing.png'" width="100%" alt="landing">
+        <img :src="'/images/' + $lang + '/landing.png'" width="100%" alt="landing">
 
         <!-- Carousel for mobile wallpapers -->
         <carousel-3d 
@@ -55,52 +55,45 @@
             :controls-height="carousel.arrows.height"
             @after-slide-change="this.handleChangeRingtoneSlider" >
             <slide v-for="(slide, i) in ringtones" :index="i" :key="i">
-                <img :src="`/images/${lang}/ringtones/ringtone-${i}.png`" width="100%" alt="">
+                <img :src="`/images/${$lang}/ringtones/ringtone-${i}.png`" width="100%" alt="">
             </slide>
         </carousel-3d>
 
         <Button 
-            :main="`/images/${lang}/button-android/button.png`"
-            :hover="`/images/${lang}/button-android/button-hover.png`"
-            :clicked="`/images/${lang}/button-android/button-clicked.png`"
             class="button button_android-wp"
-            @click.native="openModal('androidWp')" />
+            @click.native="openModal('androidWp')"
+            name="button-android"
+            hasText />
         <Button 
-            :main="`/images/${lang}/button-iphone/button.png`"
-            :hover="`/images/${lang}/button-iphone/button-hover.png`"
-            :clicked="`/images/${lang}/button-iphone/button-clicked.png`"
             class="button button_iphone-wp"
-            @click.native="openModal('iphoneWp')" />
+            @click.native="openModal('iphoneWp')"
+            name="button-iphone"
+            hasText />
         <Button 
-            :main="`/images/${lang}/button-download/button.png`"
-            :hover="`/images/${lang}/button-download/button-hover.png`"
-            :clicked="`/images/${lang}/button-download/button-clicked.png`"
             class="button button_desktop"
-            @click.native="openModal('desktopWp')" />
+            @click.native="openModal('desktopWp')"
+            name="button-download"
+            hasText />
         <Button 
-            :main="`/images/button-hear/button.png`"
-            hover="/images/button-hear/button-hover.png" 
-            clicked="/images/button-hear/button-clicked.png" 
             class="button_hear"
-            @click.native="playSound()" />
+            @click.native="playSound()"
+            name="button-hear" />
         <Button 
-            :main="`/images/${lang}/button-android/button.png`"
-            :hover="`/images/${lang}/button-android/button-hover.png`"
-            :clicked="`/images/${lang}/button-android/button-clicked.png`"
             class="button button_android-ringtone"
-            @click.native="openModal('androidRingtone')" />
+            @click.native="openModal('androidRingtone')"
+            name="button-android"
+            hasText />
         <Button 
-            :main="`/images/${lang}/button-iphone/button.png`"
-            :hover="`/images/${lang}/button-iphone/button-hover.png`"
-            :clicked="`/images/${lang}/button-iphone/button-clicked.png`"
             class="button button_iphone-ringtone"
-            @click.native="openModal('iphoneRingtone')" />
+            @click.native="openModal('iphoneRingtone')"
+            name="button-iphone"
+            hasText />
         
 
         <div class="modal" v-if="isModalOpened" @click.self.prevent="closeModal()">
             <div class="modal__item modal__item_android-wp" v-if="modal.androidWp" >
                 <img 
-                    :src="`/images/${lang}/modals/android-wp.png`"
+                    :src="`/images/${$lang}/modals/android-wp.png`"
                     alt=""
                     class="modal__image"
                     width="500px">
@@ -109,11 +102,7 @@
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
                 <a :href="`/images/sveza-tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
-                    <Button 
-                        :main="`/images/${lang}/button-download/button.png`"
-                        :hover="`/images/${lang}/button-download/button-hover.png`"
-                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
-                        class="modal__button_withqr" />
+                    <Button class="modal__button_withqr" name="button-download" hasText />
                 </a>
                 <span class="modal__link">
                     {{ 'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg' }}
@@ -121,7 +110,7 @@
             </div>
             <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
                 <img 
-                    :src="`/images/${lang}/modals/iphone-wp.png`" 
+                    :src="`/images/${$lang}/modals/iphone-wp.png`" 
                     alt=""
                     class="modal__image"
                     width="500px">
@@ -130,11 +119,7 @@
                     :size="120"
                     :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
                 <a :href="`/images/sveza-tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
-                    <Button 
-                        :main="`/images/${lang}/button-download/button.png`"
-                        :hover="`/images/${lang}/button-download/button-hover.png`"
-                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
-                        class="modal__button_withqr" />
+                    <Button class="modal__button_withqr" name="button-download" hasText />
                 </a>
                 <span class="modal__link">
                     {{ 'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg' }}
@@ -142,21 +127,17 @@
             </div>
             <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
                 <img 
-                    :src="`/images/${lang}/modals/desktop-wp.png`" 
+                    :src="`/images/${$lang}/modals/desktop-wp.png`" 
                     alt=""
                     class="modal__image"
                     width="500px">
                 <a :href="`/images/sveza-comp-0${this.desktopWallpaper}.jpg`" target="_blank" download>
-                    <Button 
-                        :main="`/images/${lang}/button-download/button.png`"
-                        :hover="`/images/${lang}/button-download/button-hover.png`"
-                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
-                        class="modal__button" />
+                    <Button class="modal__button" name="button-download" hasText />
                 </a>
             </div>
             <div class="modal__item modal__item_android-ringtone" v-if="modal.androidRingtone" >
                 <img 
-                    :src="`/images/${lang}/modals/android-ringtone.png`" 
+                    :src="`/images/${$lang}/modals/android-ringtone.png`" 
                     alt=""
                     class="modal__image"
                     width="500px">
@@ -165,11 +146,7 @@
                     :size="120"
                     :text="'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3'" />
                 <a :href="`/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`" target="_blank" download>
-                    <Button 
-                        :main="`/images/${lang}/button-download/button.png`"
-                        :hover="`/images/${lang}/button-download/button-hover.png`"
-                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
-                        class="modal__button_withqr" />
+                    <Button class="modal__button_withqr" name="button-download" hasText />
                 </a>
                 <span class="modal__link">
                     {{ 'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3' }}
@@ -177,16 +154,12 @@
             </div>
             <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
                 <img 
-                    :src="`/images/${lang}/modals/iphone-ringtone.png`" 
+                    :src="`/images/${$lang}/modals/iphone-ringtone.png`" 
                     alt=""
                     class="modal__image"
                     width="500px">
                 <a :href="`/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`" target="_blank" download>
-                    <Button 
-                        :main="`/images/${lang}/button-download/button.png`"
-                        :hover="`/images/${lang}/button-download/button-hover.png`"
-                        :clicked="`/images/${lang}/button-download/button-clicked.png`"
-                        class="modal__button" />
+                    <Button class="modal__button" name="button-download" hasText />
                 </a>
                 <a 
                     href="https://www.apple.com/ru/itunes/download/" 
@@ -198,34 +171,7 @@
             </div>
         </div>
 
-        <div class="social-sharing">
-            <a 
-                href="https://vk.com/share.php?url=http%3A%2F%2Fsveza-new-year.com&title=Happy%20Wood%20Year&description=Увлекательная%20новогодняя%20игра%20от%20«Свезы»%20с%20приятными%20подарками&noparse=true" 
-                target="_blank" 
-                class="">
-                <Button 
-                    main="/images/button-vk/button.png"
-                    hover="/images/button-vk/button-hover.png"
-                    clicked="/images/button-vk/button-clicked.png"
-                    class="social-sharing__vk" />
-            </a>
-            <a 
-                href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsveza-new-year.com&title=Happy%20Wood%20Year&description=Увлекательная%20новогодняя%20игра%20от%20«Свезы»%20с%20приятными%20подарками" 
-                target="_blank" 
-                class="">
-                <Button 
-                    main="/images/button-facebook/button.png"
-                    hover="/images/button-facebook/button-hover.png"
-                    clicked="/images/button-facebook/button-clicked.png"
-                    class="social-sharing__fb" />
-            </a>
-            <Button 
-                :main="`/images/${lang}/button-link/button.png`"
-                :hover="`/images/${lang}/button-link/button-hover.png`"
-                :clicked="`/images/${lang}/button-link/button-clicked.png`"
-                @click.native="copyUrl()"
-                class="social-sharing__link" />
-        </div>
+        <SocialButtons />
 
         <audio ref="sound0" src="/sounds/gifts/basic/01-kto-tam.mp3" />
         <audio ref="sound1" src="/sounds/gifts/basic/02-molodoy-dyatel-na-bereze.mp3" />
@@ -242,13 +188,14 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
+    import Button from '@/components/interface/Button.vue'
+    import SocialButtons from '@/components/gifts/SocialButtons.vue'
 
-    import Button from '../components/interface/Button.vue'
     export default {
         name: 'GiftsPage',
         components: {
-            Button
+            Button,
+            SocialButtons
         },
         data() {
             return {
@@ -314,7 +261,6 @@
                 }
             }
         },
-        computed: mapGetters(['lang']),
         methods: {
             handleChangeMobileSlider(index) { 
                 this.mobileWallpaper = index + 1
@@ -344,14 +290,6 @@
             playSound() {
                 const ref = 'sound' + this.ringtone
                 this.$refs[ref].play()
-            },
-            copyUrl() {
-                const el = document.createElement('textarea');
-                el.value = window.location.href;
-                document.body.appendChild(el);
-                el.select();
-                document.execCommand('copy');
-                document.body.removeChild(el);
             }
         },
         mounted() {
@@ -376,16 +314,11 @@
                 width: globalWidth * 0.08,
                 height: globalWidth * 0.05
             }
-        },
-        beforeRouteEnter (to, from, next) {
-            next(vm => {
-                vm.$store.commit('setLang', to.matched[0].meta.lang)
-            })
         }
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
     .carousel1 {
         position: absolute !important;
         top: 35% !important;
@@ -520,26 +453,5 @@
         font-size: 10px;
         width: 22%;
         word-wrap: break-word;
-    }
-
-    .social-sharing__vk {
-        position: absolute;   
-        width: 4%;
-        top: 97%;
-        left: 46.5%;
-    }
-
-    .social-sharing__fb {
-        position: absolute;   
-        width: 4%;
-        top: 97%;
-        left: 41%;
-    }
-
-    .social-sharing__link {
-        position: absolute;   
-        width: 18%;
-        top: 97%;
-        left: 52%;
     }
 </style>
