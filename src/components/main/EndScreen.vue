@@ -14,7 +14,7 @@
 <script>
     import EndRu from '@/svg/ru/end.svg'
     import EndEn from '@/svg/en/end.svg'
-    import Button from '@/components/interface/Button.vue'
+    import Button from '@/components/common/Button.vue'
 
     export default {
         name: 'endScreen',

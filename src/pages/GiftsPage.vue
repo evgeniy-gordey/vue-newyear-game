@@ -89,87 +89,40 @@
             name="button-iphone"
             hasText />
         
+        <Modal 
+            v-if="isModalOpened && modal.androidWp" 
+            @close="closeModal()"
+            :img="`/images/${$lang}/modals/android-wp.png`"
+            :link="`/images/sveza-tel-0${mobileWallpaper}.jpg`">
+        </Modal>
 
-        <div class="modal" v-if="isModalOpened" @click.self.prevent="closeModal()">
-            <div class="modal__item modal__item_android-wp" v-if="modal.androidWp" >
-                <img 
-                    :src="`/images/${$lang}/modals/android-wp.png`"
-                    alt=""
-                    class="modal__image"
-                    width="500px">
-                <qr-code 
-                    class="modal__qr"
-                    :size="120"
-                    :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
-                <a :href="`/images/sveza-tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
-                    <Button class="modal__button_withqr" name="button-download" hasText />
-                </a>
-                <span class="modal__link">
-                    {{ 'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg' }}
-                </span>
-            </div>
-            <div class="modal__item modal__item_iphone-wp" v-if="modal.iphoneWp" >
-                <img 
-                    :src="`/images/${$lang}/modals/iphone-wp.png`" 
-                    alt=""
-                    class="modal__image"
-                    width="500px">
-                <qr-code 
-                    class="modal__qr"
-                    :size="120"
-                    :text="'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg'" />
-                <a :href="`/images/sveza-tel-0${this.mobileWallpaper}.jpg`" target="_blank" download>
-                    <Button class="modal__button_withqr" name="button-download" hasText />
-                </a>
-                <span class="modal__link">
-                    {{ 'sveza-new-year.com/images/sveza-tel-0' + mobileWallpaper + '.jpg' }}
-                </span>
-            </div>
-            <div class="modal__item modal__item_desktop-wp" v-if="modal.desktopWp" >
-                <img 
-                    :src="`/images/${$lang}/modals/desktop-wp.png`" 
-                    alt=""
-                    class="modal__image"
-                    width="500px">
-                <a :href="`/images/sveza-comp-0${this.desktopWallpaper}.jpg`" target="_blank" download>
-                    <Button class="modal__button" name="button-download" hasText />
-                </a>
-            </div>
-            <div class="modal__item modal__item_android-ringtone" v-if="modal.androidRingtone" >
-                <img 
-                    :src="`/images/${$lang}/modals/android-ringtone.png`" 
-                    alt=""
-                    class="modal__image"
-                    width="500px">
-                <qr-code 
-                    class="modal__qr"
-                    :size="120"
-                    :text="'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3'" />
-                <a :href="`/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`" target="_blank" download>
-                    <Button class="modal__button_withqr" name="button-download" hasText />
-                </a>
-                <span class="modal__link">
-                    {{ 'sveza-new-year.com/sounds/gifts/basic/' + ringtones[ringtone] + '.mp3' }}
-                </span>
-            </div>
-            <div class="modal__item modal__item_iphone-ringtone" v-if="modal.iphoneRingtone" >
-                <img 
-                    :src="`/images/${$lang}/modals/iphone-ringtone.png`" 
-                    alt=""
-                    class="modal__image"
-                    width="500px">
-                <a :href="`/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.m4r`" target="_blank" download>
-                    <Button class="modal__button" name="button-download" hasText />
-                </a>
-                <a 
-                    href="https://www.apple.com/ru/itunes/download/" 
-                    class="modal__itunes" 
-                    target="_blank">
-                    Скачать iTunes<br>
-                    для Windows
-                </a>
-            </div>
-        </div>
+        <Modal 
+            v-if="isModalOpened && modal.iphoneWp" 
+            @close="closeModal()"
+            :img="`/images/${$lang}/modals/iphone-wp.png`"
+            :link="`/images/sveza-tel-0${mobileWallpaper}.jpg`">
+        </Modal>
+
+        <Modal 
+            v-if="isModalOpened && modal.desktopWp" 
+            @close="closeModal()"
+            :img="`/images/${$lang}/modals/desktop-wp.png`"
+            :link="`/images/sveza-tel-0${desktopWallpaper}.jpg`">
+        </Modal>
+
+        <Modal 
+            v-if="isModalOpened && modal.androidRingtone" 
+            @close="closeModal()"
+            :img="`/images/${$lang}/modals/android-ringtone.png`"
+            :link="`/sounds/gifts/basic/${this.ringtones[this.ringtone]}.mp3`">
+        </Modal>
+
+        <Modal 
+            v-if="isModalOpened && modal.iphoneRingtone" 
+            @close="closeModal()"
+            :img="`/images/${$lang}/modals/iphone-ringtone.png`"
+            :link="`/sounds/gifts/iphone/${this.ringtones[this.ringtone]}.mp3`">
+        </Modal>
 
         <SocialButtons />
 
@@ -188,12 +141,14 @@
 </template>
 
 <script>
-    import Button from '@/components/interface/Button.vue'
+    import Modal from '@/components/common/Modal.vue'
+    import Button from '@/components/common/Button.vue'
     import SocialButtons from '@/components/gifts/SocialButtons.vue'
 
     export default {
         name: 'GiftsPage',
         components: {
+            Modal,
             Button,
             SocialButtons
         },
@@ -342,7 +297,6 @@
 
     .button {
         position: absolute;
-        cursor: pointer;
         width: 15%;
     }
 
@@ -373,85 +327,8 @@
 
     .button_hear {
         position: absolute;
-        cursor: pointer;
         width: 5%;
         top: 89.5%;
         left: 57%;
-    }
-    
-    .modal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        z-index: 1000;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, .75)
-    }
-
-    @media (max-width: 1000px) and (min-aspect-ratio: 1/1) {
-        .modal {
-            align-items: flex-start;
-            overflow: scroll;
-        }
-    }
-
-    .modal__image {
-        align-self: center;
-    }
-
-    .modal__item {
-        display: flex;
-        position: relative;
-        z-index: 1100;
-    }
-
-    .modal__button {
-        position: absolute;
-        cursor: pointer;
-        width: 160px;
-        top: 100px;
-        left: 45px;
-        z-index: 1110;
-    }
-
-    .modal__button_withqr {
-        position: absolute;
-        cursor: pointer;
-        width: 27%;
-        top: 40%;
-        left: 10%;
-    }
-
-    .modal__qr {
-        position: absolute;
-        top: 15%;
-        left: 11%;
-    }
-
-    .modal__itunes {
-        position: absolute;
-        top: 24%;
-        left: 14%;
-        color: #2e358b;
-        font-size: 10px;
-        width: 22%;
-        word-wrap: break-word;
-        text-decoration: underline;
-    }
-    
-    .modal__link {
-        position: absolute;
-        top: 49%;
-        left: 13%;
-        color: #2e358b;
-        font-size: 10px;
-        width: 22%;
-        word-wrap: break-word;
     }
 </style>

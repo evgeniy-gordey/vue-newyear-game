@@ -31,8 +31,8 @@
     import AnimatedElements from '@/components/main/AnimatedElements.vue'
     import StartScreen from '@/components/main/StartScreen.vue'
     import EndScreen from '@/components/main/EndScreen.vue'
-    import Counter from '@/components/interface/Counter.vue'
-    import MuteSound from '@/components/interface/MuteSound.vue'
+    import Counter from '@/components/main/Counter.vue'
+    import MuteSound from '@/components/main/MuteSound.vue'
 
     export default {
         name: 'MainPage',
