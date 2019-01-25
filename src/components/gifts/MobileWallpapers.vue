@@ -1,6 +1,5 @@
 <template>
     <div class="mobile-wallpapers">
-        <!-- Carousel for mobile wallpapers -->
         <carousel-3d 
             v-if="slider.width"
             class="slider"

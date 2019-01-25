@@ -1,6 +1,5 @@
 <template>
     <div class="ringtones">
-        <!-- Carousel for ringtones -->
         <carousel-3d 
             v-if="slider.width"
             class="slider" 

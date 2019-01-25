@@ -1,6 +1,5 @@
 <template>
     <div class="desktop-wallpapers">
-        <!-- Carousel for desktop wallpapers -->
         <carousel-3d 
             v-if="slider.width"
             class="slider" 
