@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" @click.self.prevent="closeModal()">
+    <div class="modal" @click.self.prevent="closeModal()" @keyup.esc="closeModal()" tabindex="0">
         <div class="modal__item">
             <div class="modal__image">
                 <img :src="img" width="100%" />
@@ -43,16 +43,10 @@ export default {
     methods: {
         closeModal() {
             this.$emit('close')
-        },
-        escListener(e) {
-            if (e.keyCode == 27) this.closeModal()
         }
     },
     mounted() {
-        document.addEventListener("keyup", this.escListener)
-    },
-    destroyed() {
-        document.removeEventListener("keyup", this.escListener)
+        this.$el.focus()
     }
 }
 </script>
